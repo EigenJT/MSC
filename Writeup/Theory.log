@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAY 2017 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 MAY 2017 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -367,11 +367,7 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 LaTeX Warning: Unused global option(s):
     [margin=1in].
 
-(./Theory.aux
-
-LaTeX Warning: Label `jstates' multiply defined.
-
-)
+No file Theory.aux.
 \openout1 = `Theory.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -386,7 +382,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen114
@@ -457,35 +453,81 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Graphics/ga69.png, id=1, 578.16pt x 433.62pt>
-File: Graphics/ga69.png Graphic file (type png)
- <use Graphics/ga69.png>
-Package pdftex.def Info: Graphics/ga69.png used on input line 21.
-(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+
+LaTeX Warning: Reference `AHF' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Reference `ALI' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: File `Graphics/ga69.png' not found on input line 21.
+
+
+! Package pdftex.def Error: File `Graphics/ga69.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 ...phics[width=\textwidth]{Graphics/ga69.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `ga69' on page 1 undefined on input line 25.
 
 [1
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2 <./Graphics/ga69.png>] [3] [4] [5] [6] [7] [8] [9] [10] [11] (./Theory.bbl
-[12]) [13
 
-] (./Theory.aux)
+Package natbib Warning: Citation `ModAN' on page 2 undefined on input line 43.
 
-LaTeX Warning: There were multiply-defined labels.
+[2] [3] [4]
+
+LaTeX Warning: Reference `B-eq' on page 5 undefined on input line 130.
+
+[5] [6] [7]
+
+LaTeX Warning: Reference `totdec' on page 8 undefined on input line 204.
+
+[8]
+
+LaTeX Warning: Reference `muref' on page 9 undefined on input line 208.
+
+
+LaTeX Warning: Reference `Remp' on page 9 undefined on input line 217.
+
+[9]
+
+LaTeX Warning: Reference `jstates' on page 10 undefined on input line 242.
+
+[10]
+No file Theory.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[11] [12] (./Theory.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3154 strings out of 493089
- 40420 string characters out of 6134842
- 106924 words of memory out of 5000000
- 6571 multiletter control sequences out of 15000+600000
- 13218 words of font info for 48 fonts, out of 8000000 for 9000
+ 3144 strings out of 493089
+ 40253 string characters out of 6134842
+ 106773 words of memory out of 5000000
+ 6565 multiletter control sequences out of 15000+600000
+ 13040 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,21n,24p,987b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,21n,24p,987b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -499,12 +541,12 @@ texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Theory.pdf (13 pages, 212453 bytes).
+Output written on Theory.pdf (12 pages, 180651 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
