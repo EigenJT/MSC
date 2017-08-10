@@ -1,38 +1,3 @@
-\documentclass[12pt,a4paper,margin=1in]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{algorithm2e}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{braket}
-\usepackage{natbib}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
-\usetikzlibrary{shapes,arrows}
-\usepackage{bm}
-\usepackage[toc,page]{appendix}
-\pagenumbering{arabic}
-\linespread{1.3}
-
-
-\tikzstyle{decision} = [ellipse, minimum width=1.5cm, minimum height=1cm, text centered, draw=black, fill=green!30]
-
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-    text width=6em, text centered, rounded corners, minimum height=4em]
-
-\tikzstyle{end} = [rectangle, draw, fill=yellow!20, 
-    text width=6em, text centered, rounded corners, minimum height=4em]
-
-\tikzstyle{prelim} = [rectangle, draw, fill=red!20, 
-    text width=6em, text centered, rounded corners, minimum height=4em]
-
-\tikzstyle{arrow} = [thin,->,>=stealth]
-
-
-
-\begin{document}
-\chapter{Simulation Pipeline}
 In this chapter the simulation of a hyperfine spectrum measured at TRIUMF is described in detail. $\S$\ref{pip} includes little more than a graphical representation of the algorithm followed when the atoms are interacting with the laser. Each subsequent section is dedicated to an individual step in the algorithm, detailing the logic and computations required at that step. The final section of the chapter shows how a hyperfine spectrum is built through the repeated application of the interaction loop.
 
 \begin{figure}[h]
@@ -121,11 +86,11 @@ P(F_i) = \frac{2F_i+1}{\sum_j 2F_j+1}
 Knowing this, the ground state can be chosen through the generation of a random number $x \in [0,1]$ from a uniform distribution. Each projection is given a range of numbers from 0 to 1, proportional to Eq. \ref{gs_prob}. If $x$ falls in the assigned range, then that ground state is chosen. 
 
 \subsection{Computation of Excitation Rates}
-With the ground state and the velocity of the atom now selected, the probability that a transition will occur can be calculated. For each allowed transition between the chosen ground state $F_g$ and an excited state $F_{e,i}$, the transition rate $\gamma_i$ is given by Eq. (REFERENCE THEORY). Note that the laser frequency $f_l$ must be shifted according to the relavistic doppler effect which depends on the velocity of the atom. The frequency observed by the atom, $f_o$, is given by
+With the ground state and the velocity of the atom now selected, the probability that a transition will occur can be calculated. For each allowed transition between the chosen ground state $F_g$ and an excited state $F_{e,i}$, the transition rate $\gamma_i$ is given by Eq. (REFERENCE THEORY). Note that the laser frequency $f_l$ must be shifted according to the relavistic doppler effect which depends on the velocity of the atom. The frequency observed by the atom, $f_o$, is given by \cite{cmec}
 \begin{equation}
 f_o = f_l \sqrt{\frac{1+\beta}{1-\beta}}
 \end{equation}
-where $\beta = v_a/c$.\cite{cmec}
+where $\beta = v_a/c$.
 
 \section{Interaction Loop}
 The interaction loop of the algorithm is the place where the atoms undergo several instances of excitation and decay. Also included are regular checks to see in the atom would still be present in the in interaction region, as well as whether or not a released photon would be measured by the light collection system present in the experiment.
@@ -182,4 +147,3 @@ The preliminary parameters mentioned in the above pseudo-code refer to all the q
 \item Distance between CEC and LCR: $d$
 \item Length of LCR: $d_{LCR}$
 \end{list}
-\end{document}

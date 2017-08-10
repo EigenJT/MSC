@@ -1,0 +1,41 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anika V. et al.}({2015})]{CFBS}
+{Anika V. et al.}
+\newblock {The Collinear Fast Beam laser Spectroscopy experiment at TRIUMF}.
+\newblock {2015}.
+
+\bibitem[{Carlos A. Bertulani}({2007})]{Nut}
+{Carlos A. Bertulani}.
+\newblock \emph{{Nuclear Physics in a Nutshell}}.
+\newblock {2007}.
+
+\bibitem[{Fujia Yang, Joseph H. Hamilton}({2010})]{ModAN}
+{Fujia Yang, Joseph H. Hamilton}.
+\newblock \emph{{Modern Atomic and Nuclear Physics}}.
+\newblock {2010}.
+
+\bibitem[{G.K. Wertheim et al.}({1974})]{voigt}
+{G.K. Wertheim et al.}
+\newblock {Determination of the Gaussian and Lorentzian content of experimental
+  lineshapes}.
+\newblock \emph{{Review of Scientific Instruments}}, {45}, {1974}.
+
+\bibitem[{Thomas Procter}({2013})]{TomT}
+{Thomas Procter}.
+\newblock \emph{{New Techniques of Laser Spectroscopy on Exotic Isotopes of
+  Gallium and Francium}}.
+\newblock PhD thesis, {2013}.
+
+\bibitem[{T.J. Proctor et al.}({2012})]{GA69}
+{T.J. Proctor et al.}
+\newblock {Nuclear mean-square-charge radii of $^{63,64,66,68-82}$Ga nuclei: No
+  anomalous behavious at N = 32}.
+\newblock {2012}.
+
+\end{thebibliography}

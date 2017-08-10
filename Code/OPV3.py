@@ -344,7 +344,7 @@ beam_en_max = 0.5*m_is*(v_max/c)**2#max beam energy in eV
 #Next we start figuring out what the beam looks like:
 
 #v_beam_init = c*n.sqrt(2.*(v_i/m_is))#get the speed of the beam in m/s
-#vs = [] #store the velocities of the atoms
+vs = [] #store the velocities of the atoms
 vs_therm=[]
 gs = [] #store all the ground states
 gs_LCR=[]#store the states that the atoms come into the LCR in
@@ -355,6 +355,10 @@ cts = [] #store counts
 wn = [] #store shifted wavenumber of laser
 uppers = [] #store energy limits
 lowers = []
+scatter_rates_store = []
+scatter_times = []
+deltas=[]
+states_hist = []
 
 diff = beam_en_max-beam_en_min
 dacs = n.arange((beam_en_min-0.01*diff),(beam_en_max+0.01*diff+dac_step),(dac_step))#beam energy steps in eV
@@ -362,215 +366,113 @@ l = float(len(dacs))
 ph_detected = 0.0
 prog_dac = 0
 
-#-----not right--------
-#r_mean = N_l**2*a_0/Z#mean radius in m
-#crss_area = n.pi*r_mean**2 #cross sectional area of atom
-#l_p_W = float(l_p)/10**3 #laser power in Watts
-#l_en = h_js*c/(1.0/(100.0*l_wn))#laser energy in joules
-#photon_rate = l_p_W/l_en
-
-#this is the proper scattering rate
-
-
 gs_array = n.zeros((len(dacs),4,2))
 ct_gs = 0
 print 'Starting run...'
-ti.sleep(1)
-for jk in dacs:#step atoms through dac steps
-	ph_dac=0 #photons detected at each dac step
-	#if v_i+jk <= 0:
-	#	v_beam = -c*n.sqrt(2.*(n.abs(v_i+jk)/(m_is)))#get the speed of the beam in m/s after the acceleration due to the doppler voltage
-	#if v_i+jk > 0:
-	#	v_beam = c*n.sqrt(2.*(n.abs(v_i+jk)/(m_is)))
-	v_beam = c*n.sqrt(2.*(n.abs(jk)/(m_is)))
 
-	for i in n.arange(0,t_v,1):#this is the loop that will run each atom through the optical pumping region and the LCR
-		v_therm = Boltz(m_is,T)#give the atom a shift in on axis velocity according to boltzmann distribution
+ti.sleep(1)
+
+for jk in dacs:
+	ph_dac = 0 #Number of photons detected at each dac increment set to 0
+	v_beam = c*n.sqrt(2.*(n.abs(jk)/(m_is)))#find the velocity of the beam at this DAC increment
+	
+	for i in n.arange(0,t_v,1):#this loops through every atom at each dac increment
+		states_inc = []
+		v_therm = Boltz(m_is,T)#give the atom a shift in on axis velocity according to boltzmann distribution depending on the mass and temperature of the beam
 		vs_therm.append(v_therm)#store the shift
 		v_a = v_beam + v_therm #final velocity of the atom
-		#vs.append(v_a)
-		
+		vs.append(v_a)
 		
 		l_wnd = Dop(v_a,l_wn)#get the shifted wavenumber of the laser in cm^-1
 		l_lam = 1/(100*l_wnd)#wavelength of shifted laser in m
 		
-		#------Ignore------#
-		#int_cross = 4.0*(alpha**4)*n.sqrt(2.0)*(Z**5)*(8.0/3.0)*n.pi*(r_e**2)*((m_e)/(hbar*2.0*n.pi*c/l_lam))**(7.0/2.0)#interaction cross section for atom: http://www.physics.queensu.ca/~phys352/lect17.pdf
-		#ph_sec = int_cross*photon_rate#number of photons per second
-		#t_int = 1.0/(ph_sec) #time per exciting photon
-		#stop ignoring-----#
-		
-		
-		wn.append(l_wnd)
+		wn.append(l_wnd)#store the shifted wavelength of the laser
 		en_l = hbar*2.0*n.pi*c*l_wnd*10**2#get the energy of the shifted laser in eV
 		ens.append(en_l)#store the laser energies
-		
-		
-		#now, we decide which F state the atom enters with
-		F_g = GSP(I,J_l)#atom is now in a particular ground state
-		F_ex = 0
+		F_g = GSP(I,J_l)#give the atom a ground F state
+		states_inc.append(F_g)
+		F_ex = 0 #define and initialize the excited state
 		gs.append(F_g) #store all the ground states of the incoming atoms just to make sure everything is ok
-		 #skip atom or not. Happens if there are no available initial transitions. no skip = 0, skip = 1
-		pos = 0 #position of the ion
-		trans_en = F_n[:,4:6] #transition energy and widths
+		pos = 0 #set the position of the atom to the beginning of the CEC
+		trans_en = F_n[:,4:5]#get the energy of the transitions as well as the spread for deexcitation
 		
-		while pos < d:#Here the atom will be excited and deexcited in the distance between the CEC and the LCR
-			skip = 1#going to skip unless we get a transition
-			
-			for trans in n.arange(0,n_tr,1):#first see if any transitions are available
-				
-				if trans_en[trans,0]-trans_en[trans,1]<=en_l<=trans_en[trans,0]+trans_en[trans,1] and F_n[trans,1] == F_g: #if the transition is available, transition
-					delta = n.abs(en_l-trans_en[trans,0])/(hbar*2.0*n.pi)
-					scatter_rate = Scatter(1.0/F_n[trans,6],F_n[trans,9],delta)
-					t_int = 1.0/scatter_rate
-					pos = pos+t_int*v_a#advance the atom by the time it takes to interact with a photon
-					F_ex = F_n[trans,0] #set the state to the upper state of the transition
-					#print 'Excite'
-					#Next we de-excite the atom
-					de_ex_mat = []
-					n_trans_de_ex = 0
-					
-					for de_ex in n.arange(0,n_tr,1):#cycle through the transitions, looking for those with the allowed lower states
-						if F_n[de_ex,0] == F_ex: #select the transitions with F_ex as the upper state
-							n_trans_de_ex = n_trans_de_ex + 1 #increase number of available transitions
-							de_ex_mat.append(F_n[de_ex,:])#store that potential transition
-							
-							
-					de_ex_mat = n.reshape(de_ex_mat,(n_trans_de_ex,10))#reshape the deexcitation matrix
-					tot_lik = n.sum(de_ex_mat[:,7]) #use lifetimes to decide total likelihood of decay
-					
-					likelihoods = (de_ex_mat[:,7])/tot_lik #likelihood of this decay happening
-					r_num = r.uniform(0,1)#generate a random number between 0 and 1
-					cumulative = 0 #cumulative probability
-					
-					#choose the transition that will happen
-					for de_ex_choice in n.arange(0,n_trans_de_ex,1):
-						prob = likelihoods[de_ex_choice]
-						if cumulative <= r_num <= prob+cumulative:
-							transition = de_ex_mat[de_ex_choice,:]#if the random number falls in the right range, pick that transtion
-							#print 'Deexcite'
-							break
-						cumulative = cumulative + prob#if the random number doesnt fall in the right range, change range and check again
-					Lifetime = transition[6] #get the lifetime in seconds
-					pos = pos + Lifetime*v_a #advance the atom by the lifetime times the speed
-					F_g = transition[1] #set the new ground state
-					skip = 0
-					
-			if skip == 1:
-				pos = d
-			#----------------------------------------IN THE LCR--------------
-		gs_LCR.append(F_g)#store the ground state the atom comes in as
-		while d <= pos < d+d_LCR:#Here the atom will be excited and deexcited in the LCR
-			#print 'IN LCR'
-			skip = 1
-			for trans in n.arange(0,n_tr,1):#first see if any transitions are available
-			
-				if trans_en[trans,0]-trans_en[trans,1]<=en_l<=trans_en[trans,0]+trans_en[trans,1] and F_n[trans,1] == F_g: #if the transition is available, transition
-					#print 'TRANSITION IN LCR'
-					delta = n.abs(en_l-trans_en[trans,0])/(hbar*2.0*n.pi)
-					scatter_rate = Scatter(1.0/F_n[trans,6],F_n[trans,9],delta)
-					t_int = 1.0/scatter_rate
-					pos = pos+t_int*v_a#advance the atom by the time it takes to interact with a photon
-					F_ex = F_n[trans,0] #set the state to the upper state of the transition
-					print 'EXCITE LCR'
-					#Next we de-excite the atom
-					de_ex_mat = []
-					n_trans_de_ex = 0
-					for de_ex in n.arange(0,n_tr,1):#cycle through the transitions, looking for those with the allowed lower states
-						if F_n[de_ex,0] == F_ex: #select the transitions with F_ex as the upper state
-							n_trans_de_ex = n_trans_de_ex + 1 #increase number of available transitions
-							de_ex_mat.append(F_n[de_ex,:])#store that potential transition
-					
-					de_ex_mat = n.reshape(de_ex_mat,(n_trans_de_ex,10))#reshape the deexcitation matrix
-					tot_lik = n.sum(de_ex_mat[:,7]) #use lifetimes to decide total likelihood of decay
-					
-					likelihoods = (de_ex_mat[:,7])/tot_lik #likelihood of this decay happening
-					r_num = r.uniform(0,1)#generate a random number between 0 and 1
-					cumulative = 0 #cumulative probability
-				
-					#choose the transition that will happen
-					for de_ex_choice in n.arange(0,n_trans_de_ex,1):
-						prob = likelihoods[de_ex_choice]
-						if cumulative <= r_num <= prob+cumulative:
-							transition = de_ex_mat[de_ex_choice,:]#if the random number falls in the right range, pick that transtion
-							break
-						cumulative = cumulative + prob#if the random number doesnt fall in the right range, change range and check again
-					
-					Lifetime = transition[6] #get the lifetime in seconds
-					pos = pos + Lifetime*v_a #advance the atom by the lifetime times the speed
-					photons.append(transition[4]+Cauch(0,transition[5]))
-					ph_dac = ph_dac+1
-					F_g = transition[1] #set the new ground state
-					skip = 0
-			if skip == 1:
-				pos = d+d_LCR
-
+		while pos < d+d_LCR: #Here the atom is in the CEC-LCR space.
+		#THIS IS THE EXCITATION CODE
+		#First, find all available transitions given F_g
+			F_trans = []
+			trans_count = 0
+			for f_trans in n.arange(0,n_tr,1):
+				F_g_int = F_n[f_trans,1]#find the ground state of a transition
+				if F_g_int == F_g:
+					F_trans.append(F_n[f_trans,:])
+					trans_count = trans_count+1
+			F_trans = n.reshape(F_trans,(trans_count,n_par+5))#now have info on all possible transitions
+			#next look at likelihood of transitions given energy of beam
+			delta = n.abs(en_l-F_trans[:,4])/(2*n.pi*hbar)#difference between frequency of laser and transition energies
+			for nr in delta:
+				deltas.append(nr)
+			#next, calculate scattering rates for each transition
+			scatter_rates = n.zeros((trans_count,1))
+			for scatter in n.arange(0,trans_count,1):
+				scatter_calc = Scatter(1.0/F_trans[scatter,6],F_trans[scatter,9],delta[scatter])
+				scatter_rates[scatter] = scatter_calc
+				scatter_rates_store.append(scatter_calc)
+			#next find the average scatter time
+			scatter_time = 1.0/(n.sum(1.0/scatter_rates))/1000000
+			scatter_times.append(scatter_time)
+			pos = pos + scatter_time*v_a
+			if pos > d+d_LCR:
+				#print 'LEFT IR'
+				break
+			#print 'EXCITED' #if we've left the CEC-LCR region, move to next part of the code
+			#now we choose which state to select
+			scatter_rates = scatter_rates/(n.sum(scatter_rates))#normalize scatter rates into likelihoods
+			rand = r.uniform(0,1)
+			prob = 0
+			for exc in n.arange(0,trans_count,1):
+				cumulative = prob + scatter_rates[exc]
+				if prob <= rand < cumulative:
+					F_exc = F_trans[exc,0]
+					states_inc.append(F_exc)
+					break
+				prob = cumulative
+			#THIS IS THE DE-EXCITATION CODE
+			F_trans = []
+			trans_count = 0
+			for f_trans in n.arange(0,n_tr,1):
+				F_exc_int = F_n[f_trans,0]#find the excited state of a transition
+				if F_exc_int == F_exc:
+					F_trans.append(F_n[f_trans,:])
+					trans_count = trans_count+1
+			F_trans = n.reshape(F_trans,(trans_count,n_par+5))#now have info on all possible transitions
+			lifetimes = F_trans[:,6]
+			de_excite_time = 1.0/n.sum(1.0/decay_rates)#get the cumulative lifetime of the decay
+			pos = pos+ de_excite_time*v_a#advance by the lifetime of the state
+			#if pos > d+d_LCR:
+			#	break
+			decay_rates = decay_rates/(n.sum(decay_rates))#normalize the decay rates
+			rand = r.uniform(0,1)
+			prob = 0 
+			for exc in n.arange(0,trans_count,1):
+				cumulative = prob + scatter_rates[exc]
+				if prob <= rand < cumulative:
+					F_g = F_trans[exc,1]
+					states_inc.append(F_g)
+					photon_emit = F_trans[exc,4]+Cauch(0,F_trans[exc,5])#get the energy of the photon released by the decay
+					if d<=pos<=d_LCR:#if the atom is in the LCR, record the photon
+						photons.append(photon_emit)
+						print'Photon'
+					break
+				prob = cumulative
+		states_hist.append(states_inc)
 	prog = n.round(float(prog_dac/l),6)
 	print '{} {}\r'.format(prog,ph_dac)#show progress
 	prog_dac = prog_dac+1.0		
 	cts_dac.append(ph_dac)
-	
-	
-	#here, the ground state distribution when the atoms enter the CEC and then when they enter the LCR are recorded
-	zer0 = 0
-	one = 0
-	two = 0
-	three = 0
-	for hist in gs_LCR:
-		if hist == 0:
-			zer0 = zer0+1
+				
 		
-		if hist == 1:
-			one = one+1
 		
-		if hist == 2:
-			two = two+1
 		
-		if hist == 3:
-			three = three+1
-
-	gs_pumped_dist = n.array([zer0,one,two,three])
-	
-	zer0 = 0
-	one = 0
-	two = 0
-	three = 0
-	for hist in gs:
-		if hist == 0:
-			zer0 = zer0+1
 		
-		if hist == 1:
-			one = one+1
 		
-		if hist == 2:
-			two = two+1
 		
-		if hist == 3:
-			three = three+1
-
-	gs_dist = n.array([zer0,one,two,three])
-	
-	gs_array[ct_gs,:,0] = gs_dist#store untouched ground state
-	gs_array[ct_gs,:,1] = gs_pumped_dist#store pumped ground state
-	ct_gs = ct_gs+1
-	gs = []
-	gs_LCR = []
-with open('Output_new.txt','w') as txt_file:
-	for i in cts_dac:
-		txt_file.write('%f\n' % (i))
-
-with open('Params_new.txt','w') as txt_file:
-	for param in vec:
-		txt_file.write('%f\n' % (param))
-
-
-
-#with open('gs_pumped.txt','w') as txt_file:
-#	for gs_pump in gs_array[:,:,1]:
-#		txt_file.write('%f\n' % (gs_pump))
-
-with open('photons.txt','w') as txt_file:
-	for phot in photons:
-		txt_file.write('%s\n' % (str(Decimal(phot))))
-
-ph_hist = n.histogram(photons, bins = 100000)

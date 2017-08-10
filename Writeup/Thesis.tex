@@ -5,11 +5,21 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{braket}
-\usepackage{natbib}
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{plainnat}
 \usepackage{bm}
 \usepackage[toc,page]{appendix}
 \pagenumbering{arabic}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+\pagenumbering{arabic}
+\usepackage{algorithm2e}
 \linespread{1.3}
+
+
+
+
 
 
 
@@ -28,8 +38,28 @@
 %% Input any special commands below
 %\newcommand{\Kron}[1]{\ensuremath{\delta_{K}\left(#1\right)}}
 \listfiles%
-\begin{document}
 
+
+
+\tikzstyle{decision} = [ellipse, minimum width=1.5cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+
+\tikzstyle{end} = [rectangle, draw, fill=yellow!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+
+\tikzstyle{prelim} = [rectangle, draw, fill=red!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+
+\tikzstyle{arrow} = [thin,->,>=stealth]
+
+
+
+
+
+\begin{document}
+\citeindextrue
 \maketitle%
 
 \begin{romanPagenumber}{2}%
@@ -65,32 +95,31 @@
 \listoffigures %
 
 \end{romanPagenumber}
-
 %\mainmatter %
  
 \chapter{Introduction}
 
-
-	
-
-
+\chapter{Laser Spectroscopy at TRIUMF}
+\label{Lspec}
+\input{Laser_spec_triumf/laser_spec_triumf.tex}
 
 \chapter{Theory of Laser Spectroscopy}
+\label{theory}
 \input{Theory/theory_include.tex}
 
-\chapter{Simulation Pipeline}
-\section{Probabilistic Property Selection}
-\subsection{Temperature}
-\subsection{Ground State}
-\section{Excitation Probability}
-
+\chapter{Simulation of Optical Pumping}
+\label{Op_pump}
+\input{Optical_Pumping/optical_pumping_include.tex}
 
 \chapter{Results}
+\label{res}
 
 \chapter{Conclusion}
+\label{conc}
 
-\bibliography{bibtex}{}
-\bibliographystyle{plain}
+
+
+\bibliography{thesis.bib}
 
 \end{document}
 
