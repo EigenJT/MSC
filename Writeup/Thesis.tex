@@ -1,12 +1,18 @@
 \documentclass[12pt,Bold,letterpaper,TexShade]{mcgilletdclass}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{subcaption}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{listings}
+    \lstset{basicstyle=\ttfamily\small\color{black}}
+\usepackage{mathtools}
+\usepackage{mathabx}
 \usepackage{graphicx}
 \usepackage{braket}
+\usepackage{notoccite}
 \usepackage[square,numbers]{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{unsrtnat}
 \usepackage{bm}
 \usepackage[toc,page]{appendix}
 \pagenumbering{arabic}
@@ -15,6 +21,8 @@
 \usetikzlibrary{shapes,arrows}
 \pagenumbering{arabic}
 \usepackage{algorithm2e}
+\usepackage{cleveref}
+\usepackage{appendix}
 \linespread{1.3}
 
 
@@ -28,7 +36,7 @@
 \SetDegreeType{Masters of Science}%
 \SetDepartment{Department of Physics}%
 \SetUniversity{McGill University}%
-\SetUniversityAddr{Montreal,Quebec}%
+\SetUniversityAddr{Montreal, Quebec}%
 \SetThesisDate{2017-09-15}%
 \SetRequirements{Requirements Statement}%
 \SetCopyright{Copyright Statement}%
@@ -60,16 +68,15 @@
 
 \begin{document}
 \citeindextrue
-\maketitle%
-
+\maketitle
 \begin{romanPagenumber}{2}%
 
-\SetDedicationName{\MakeUppercase{Dedication}}%
-\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
-\Dedication%
+%\SetDedicationName{\MakeUppercase{Dedication}}%
+%\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
+%\Dedication
 
 \SetAcknowledgeName{\MakeUppercase{Acknowledgements}}%
-\SetAcknowledgeText{Acknowledgments, if included, must be written in complete sentences.  Do not use direct address.  For example, instead of Thanks, Mom and Dad!, you should say I thank my parents. }%
+\SetAcknowledgeText{}%
 \Acknowledge%
 
 
@@ -84,7 +91,7 @@
 %%         French Abstract                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SetAbstractFrName{\MakeUppercase{ABR\'{E}G\'{E}}}%
-\SetAbstractFrText{ The text of the abstract in French begins here.  }%
+\SetAbstractFrText{ The text of the abstract in French begins here.}%
 \AbstractFr%
 
 \TOCHeading{\MakeUppercase{Table of Contents}}%
@@ -98,6 +105,8 @@
 %\mainmatter %
  
 \chapter{Introduction}
+\label{Intro}
+\input{intro_include/intro}
 
 \chapter{Laser Spectroscopy at TRIUMF}
 \label{Lspec}
@@ -113,13 +122,20 @@
 
 \chapter{Results}
 \label{res}
+\input{Results/results_include.tex}
 
 \chapter{Conclusion}
 \label{conc}
+\input{conclusion/conclusion_include.tex}
 
 
+\begin{appendices}
+\chapter{Written Code}
+\label{code}
+\input{code_include/code_include.tex}
+\end{appendices}
 
-\bibliography{thesis.bib}
+\bibliography{julienreferences.bib}
 
 \end{document}
 

@@ -1,14 +1,16 @@
-#This version of the code only outputs the likelihood of an atom making it to the LCR in the same ground state that it started in.
+#This version of the code outputs the likelihood of an atom making it to the LCR in the same ground state that it started in.
 
 import numpy as n
 import math as m
-import pyspec as p
+import cmath as cm
 import time as ti
 from decimal import *
 import random as r
 import numpy.linalg as lin
 from sympy.physics.wigner import wigner_6j, wigner_3j
+from scipy.special import wofz
 import matplotlib.pyplot as plt
+
 
 
 #----------------------INTRO---------------------------
@@ -18,7 +20,9 @@ import matplotlib.pyplot as plt
 # Important constants
 
 kB = 8.6173324 * 10**(-5) #eV/K boltzmanns constant
+kB_J = 1.38064852e-23#boltzmann constant in J/K
 amu = 931.4940954*10**6 #eV/c^2 rest energy of one atomic mass unit
+amu_kg = 1.66054e-27 #amu in kg
 c = 299792458 #m/s speed of light
 alpha = 0.0072973525664 #fine structure constant
 m_e = 0.5109989461*10**6#eV/c^2 mass of electron
@@ -82,10 +86,10 @@ def Beta(K,I,J):
 
 
 
-def E_hf(J,I,F,A,B):#energy of each hyperfine level in MeV. From allen leary's thesis
+def E_hf(J,I,F,A,B):#energy of each hyperfine level in eV. From allen leary's thesis
 	Kk = K(F,I,J)
-	E_hfine1 = (hbar/(2.0*n.pi))*(0.5*(A*10**6)*Kk)#here A is converted to Hz, same for B on the next line
-	E_hfine2 = (hbar/(2.0*n.pi))*((B*10**6)/4.0)*(1.5*Kk*(Kk+1.0)-2.0*I*J*(I+1.0)*(J+1.0))/(I*J*(2.0*I-1.0)*(2.0*J-1.0))
+	E_hfine1 = (hbar*2.0*n.pi)*(0.5*(A*10**6)*Kk)#here A is converted to Hz, same for B on the next line
+	E_hfine2 = (hbar*2.0*n.pi)*((B*10**6)/4.0)*(1.5*Kk*(Kk+1.0)-2.0*I*J*(I+1.0)*(J+1.0))/(I*J*(2.0*I-1.0)*(2.0*J-1.0))
 	ch = m.isnan(E_hfine2)
 	if m.isnan(E_hfine2):
 		E_hfine2 = 0
@@ -169,6 +173,30 @@ def Scatter(gamma,s_0,delta):#scattering rate of photons from laser metcalf pg.2
 	scattering_rate = (s_0/(1.0+s_0))*(gamma/2.0)/(1.0+(2.0*delta/gamma_prime)**2)
 	return scattering_rate
 
+def Lorentz(xdata,cent,gamma):
+	Lor = (1.0/n.pi)*(gamma/((xdata-cent)**2+gamma**2))
+	return Lor
+
+def gaussian(xdata,cent,sig):
+	Gauss = n.exp(-(xdata-cent)**2/(2*sig**2))/(sig*n.sqrt(2.0*n.pi))
+	return Gauss
+
+
+def realvoigt(xdata,cent,f_g,f_l):
+	z = (xdata-cent+1j*f_l)/(f_g*n.sqrt(2*n.pi))
+	wof = wofz(z)
+	voigt = wof.real/(f_g*n.sqrt(2*n.pi))
+	return voigt
+	
+	
+def pseudovoigt(xdata,cent,f_g,f_l):
+	f = (f_g**5+2.69269*f_g**4*f_l+2.42843*f_g**3*f_l**2+4.47163*f_g**2*f_l**3+0.07842*f_g*f_l**4+f_l**5)**(1.0/5)
+	#eta =1.0 - n.abs(1-(1.36606*(f_l/f)-0.47719*(f_l/f)**2+0.11116*(f_l/f)**3))
+	#eta=1
+	eta = 1.36606*(f_l/f)-0.47719*(f_l/f)**2+0.11116*(f_l/f)**3
+	pseudovoigt = (eta*Lorentz(xdata,cent,f_l/2.0)+(1.0-eta)*gaussian(xdata,cent,f_g/2))
+	return pseudovoigt,eta
+
 def voigt(xdata,amp,cent,sig,ep):#define the voigt peak. If ep is less than 0 or greater than 1, mess up the profile
     x = xdata
     C = cent
@@ -188,6 +216,7 @@ def voigt(xdata,amp,cent,sig,ep):#define the voigt peak. If ep is less than 0 or
 
 v_c = raw_input('Use the same parameter vector?(y/n)')#makes it easier to rerun things
 
+#v_c = 'y'
 if v_c in ['n']:
 	mss = float(raw_input('Isotope mass (AMU):'))#get mass of isotope
 	Z = float(raw_input('Z (# of protons):'))#get charge of nucleus
@@ -204,9 +233,8 @@ if v_c in ['n']:
 	l_p = float(raw_input('Laser Power (mW):'))#get laser power
 	wn_fs = float(raw_input('Fine Structure transition wavenumber (cm^(-1)):'))
 	d = float(raw_input('Distance between CEC and LCR (m):'))#distance over which optical pumping is problematic
-	sig = float((raw_input('Sigma of measured spectrum (eV):')))#width of measured peaks
-	ep = float((raw_input('Mix of Gaussian and Lorentzian:')))#get the mixing parameter
-	vec = [mss,Z,J_l,J_u,I,gamma_e,A_u,A_l,B_u,B_l,T,l_wn,l_p,wn_fs,d,sig,ep]
+	FILENAME = str(raw_input('Experimental file (if none, then write n)'))
+	vec = [mss,Z,J_l,J_u,I,gamma_e,A_u,A_l,B_u,B_l,T,l_wn,l_p,wn_fs,d,FILENAME]
 
 
 if v_c in ['y']:
@@ -225,11 +253,11 @@ if v_c in ['y']:
 	l_p = float(vec[12])
 	wn_fs = float(vec[13])
 	d = float(vec[14])
-	sig = float(vec[15])
-	ep = float(vec[16])
+	FILENAME = vec[15]
 
 m_is = amu*int(mss) #mass of the isotope
-En_fs = hbar*n.pi*2*c*10**2*(wn_fs)#energy in MeV of fine structure
+m_is_kg = amu_kg*int(mss)
+En_fs = hbar*n.pi*2*c*10**2*(wn_fs)#energy in eV of fine structure
 prefact = 3.0*n.pi*e_0*hbar*c**3*gamma_e/c_e**2
 
 #Determine lifetimes and widths of each transition
@@ -241,6 +269,7 @@ F_n = n.zeros((n_tr,15))#create new matrix with extra columns of Photon energy, 
 F_n[0:n_tr,0:n_par] = F_t #put in original F_t
 
 #the next section will be filling F_n with the relevant quantities, up until A
+
 
 A_vec = n.zeros((n_tr))
 omeg_vec = n.zeros((n_tr))
@@ -279,16 +308,17 @@ for k in n.arange(0,n_tr,1):
 	F_n[k,5] = spread #input energy spread in eV
 	F_n[k,6] = tau #input lifetime in seconds
 	F_n[k,7] = F_t[k,4]
+	wl_fs = 2.0*n.pi*hbar*c/En_fs
 	wl = 2.0*n.pi*hbar*c/del_en #transition wavelength in meters
-	I_s =  n.pi*h_js*c/(3*(wl**3)*tau) #compute saturation intensity pg. 25 in Metcalf, in W
+	I_s =  n.pi*h_js*c/(3.0*(wl**3.0)*tau) #compute saturation intensity pg. 25 in Metcalf, in W
 	F_n[k,8] = I_s
-	F_n[k,9] = (l_p)/I_s #compute on resonance saturation parameter pg. 25 in metcalf
+	F_n[k,9] = (l_p)/(I_s/10.0) #compute on resonance saturation parameter pg. 25 in metcalf
 	#compute the velocity of the atoms on resonance
 	e_trans = F_n[k,4]#transition energy
 	f_trans = e_trans/(hbar*2.0*n.pi)#transition frequency
-	f_init = c*(100*l_wn)#initial frequency in hz
+	f_init = c*(l_wn*100)#initial frequency in hz
 	v_trans = c*((f_trans**2-f_init**2)/(f_trans**2+f_init**2))
-	F_n[k,10] = v_trans #speed of the atom necessary for resonance
+	F_n[k,10] = n.abs(v_trans) #speed of the atom necessary for resonance
 
 #next, evaluate the likelihood that an atom in gs G will come back to that state after being excited
 F_n_shape=F_n.shape
@@ -320,21 +350,105 @@ for k in n.arange(0,n_tr,1):
 
 #now start plotting what a regular spectrum should look like
 
-xdata = n.arange(min(F_n[:,4])*0.99999999,max(F_n[:,4])*1.00000001,1e-10)
+
+xdata = n.arange(n.min(F_n[:,4])*0.999999,n.max(F_n[:,4])*1.000001,1e-8)
 
 spec_sum = n.zeros((len(xdata),))
 spec_int = 0
-amp=1e-5
+amp=1
+#print vec[12]
+#print vec[10]
 for spec in n.arange(0,n_tr,1):
-	spec_int = F_n[spec,14]*F_n[spec,7]*voigt(xdata,amp,F_n[spec,4],sig,ep)#plot the peak weighed by the chances of it not being pumped
+	gamma_stim_cal = (1.0/((1.0/(F_n[spec,6])))*n.sqrt(1.0+I/F_n[spec,8]))
+	gamma_stim = 1/(1.0/((1.0/gamma_e))*n.sqrt(1.0+I/F_n[spec,8]))
+	#gamma_stim_used = 1/(n.pi*2*(1/gamma_e))*hbar*2.0*n.pi*n.sqrt(1.0+I_s/F_n[spec,8])
+	boltz_FWHM = F_n[spec,4] * (8.0*kB_J*T*n.log(2)/(m_is_kg*c**2))**(0.5)
+	boltz_HWHM_rel = (1.0/8.0)*(2.0*kB_J*T*n.log(2)/(m_is_kg*c**2))**(0.5)
+	spec_int = F_n[spec,14]*F_n[spec,7]*realvoigt(xdata,F_n[spec,4],boltz_HWHM_rel,gamma_stim_cal)#plot the peak weighed by the chances of it not being pumped
+	print boltz_HWHM_rel
+	print gamma_stim_cal
+	#print F_n[spec,5]*n.sqrt(1.0+I/F_n[spec,8])
+	#print F_n[:,14]
 	spec_sum=spec_sum+spec_int
 
-plt.plot(xdata,spec_sum)
-	
-	
-	
+
+do = 1
+if FILENAME in ['n']:
+	do = 0
 	
 
+
+if do == 1:
+	offset =l_wn#laser frequency in cm^-1
+	lam = (1.0/offset)/100 #wl in m
+	En_offset = 2.0*n.pi*hbar*c/lam#offset energy in eV
+		
+	data = n.loadtxt(open(FILENAME,"r"))#import the datafile with name FILENAME
+	exp_x = data[:,0]
+	exp_y = data[:,1]
+	
+	exp_x_conv = exp_x*10**6#convert to Hz
+	exp_x_conv = exp_x_conv*2.0*n.pi*hbar#convert to eV
+	exp_x_conv = exp_x_conv+En_offset #recenter the whole thing
+	
+	index = 0
+	for ch in exp_y:#find the highest peak in the experimental data
+		if ch == n.max(exp_y):
+			max_in_exp = int(index)
+			break
+		index = index+1.0
+	
+	index = 0
+	for ch in spec_sum:#find the highest peak in the experimental data
+		if ch == n.max(spec_sum):
+			max_in_sim = int(index)
+			break
+		index = index+1.0
+	
+	bg = 1.755167
+	diff = exp_x_conv[max_in_exp] - xdata[max_in_sim]#difference in locations of highest peak
+	exp_x_conv = exp_x_conv -diff#line up the two highest peaks
+	offset_exp_y = exp_y-bg
+	spec_sum_exp = n.zeros((len(exp_x_conv),))
+	spec_int = 0
+	amp=1
+	for spec in n.arange(0,n_tr,1):#remake the spectrum, ready for comparison
+		gamma_stim_cal = (1.0/((1.0/(F_n[spec,6])))*n.sqrt(1.0+I/F_n[spec,8]))
+		gamma_stim = 1/(1.0/((1.0/gamma_e))*n.sqrt(1.0+I/F_n[spec,8]))
+		#gamma_stim_used = 1/(n.pi*2*(1/gamma_e))*hbar*2.0*n.pi*n.sqrt(1.0+I_s/F_n[spec,8])
+		boltz_FWHM = F_n[spec,4] * (8.0*kB_J*T*n.log(2)/(m_is_kg*c**2))**(0.5)
+		boltz_HWHM_rel = (1.0/8)*(2.0*kB_J*T*n.log(2)/(m_is_kg*c**2))**(0.5)
+		spec_int = F_n[spec,14]*F_n[spec,7]*realvoigt(exp_x_conv,F_n[spec,4],boltz_HWHM_rel,gamma_stim_cal)#plot the peak weighed by the chances of it not being pumped
+		spec_sum_exp=spec_sum_exp+spec_int
+	
+	
+	spec_sum_norm = spec_sum_exp/n.max(spec_sum_exp)
+	mult = n.max(offset_exp_y)
+	spec_sum_plot = spec_sum_norm*mult+bg
+	uncert = n.sqrt(exp_y)
+	index = 0#correct for no counts, which will be important
+	
+	for ch in uncert:
+		if ch == 0:
+			uncert[index] = 1
+		index = index+1
+	#next, remake the spectrum with exp_x_conv
+	chi_2_red = 1.0/len(exp_x_conv)*n.sum((spec_sum_plot-bg-offset_exp_y)**2/uncert**2)
+	plt.clf()
+	plt.errorbar(exp_x_conv,exp_y,uncert,fmt='k.',label=('Ga-69 Exp.'))
+	plt.plot(exp_x_conv,spec_sum_plot+bg,'-r',label=('Ga-69 Sim.'),)
+	plt.legend()
+	plt.xlabel('Energy (eV)')
+	plt.ylabel('Photon Counts')
+	plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+	plt.minorticks_on()
+	plt.text(3.0e-5+2.97093,40,'$\chi^2_{red}$=%f'%(chi_2_red))
+	plt.text(3.0e-5+2.97093,50,'$Power = %f$\mu$W'%(vec[12]/10e-3))
+	plt.ylim((-1,n.max(spec_sum_plot)))
+	plt.savefig('Ga-69-vs-sim.png')
+	print chi_2_red	
+	
+	
 
 
 
