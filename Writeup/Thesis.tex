@@ -11,8 +11,8 @@
 \usepackage{graphicx}
 \usepackage{braket}
 \usepackage{notoccite}
-\usepackage[square,numbers]{natbib}
 \bibliographystyle{unsrtnat}
+\usepackage[sort&compress,numbers]{natbib}
 \usepackage{bm}
 \usepackage[toc,page]{appendix}
 \pagenumbering{arabic}
@@ -37,7 +37,7 @@
 \SetDepartment{Department of Physics}%
 \SetUniversity{McGill University}%
 \SetUniversityAddr{Montreal, Quebec}%
-\SetThesisDate{2017-09-15}%
+\SetThesisDate{2017-12-14}%
 \SetRequirements{Requirements Statement}%
 \SetCopyright{Copyright Statement}%
 
@@ -76,7 +76,7 @@
 %\Dedication
 
 \SetAcknowledgeName{\MakeUppercase{Acknowledgements}}%
-\SetAcknowledgeText{}%
+\SetAcknowledgeText{In no particular order, I must thank my supervisors: Dr. Matthew Pearson, Dr. Fritz Buchinger and Dr. John Crawford (between the three of which exists a well of endless patience and advice) and Andrea Teigelhoefer, who repeatedly helped me with the theoretical part of this work. Of course, I would like to thank my parents, without whom I may never have had the drive, desire or support to complete this thesis. Finally, thanks must be extended to all the friends that have made Vancouver more of a home than I could ever imagine.}%
 \Acknowledge%
 
 
@@ -84,14 +84,14 @@
 %%         English Abstract                        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SetAbstractEnName{\MakeUppercase{Abstract}}%
-\SetAbstractEnText{ Abstract in English and French are required. The text of the abstract in English begins here.}
+\SetAbstractEnText{Laser spectroscopy is a technique that can be used to probe the electronic structure of atoms/ions. The Collinear Fast Beam Spectroscopy (CFBS) group at TRIUMF uses this technique to probe the hyperfine structure of rare isotopes produced on-site. The hyperfine structure of an atom, which arises from the various interactions between the atom's/ion's electrons and nucleus, can be used to infer properties, such as the spin and mean squared charge radius, of the atom's nucleus. However, the geometry of the experimental set up at TRIUMF allows for the possibility of optical pumping, a process by which the atoms/ions being probed have their electronic ground state distribution changed before the hyperfine structure can be measured. This in turn can change the relative intensities of the hyperfine transitions being measured. Optical pumping depends, mainly, on the power of the laser used to excite the hyperfine transitions being studied. In this work, a statistical model designed to simulate the effects of optical pumping on hyperfine spectra measured at TRIUMFs CFBS experiment. With the goal of simulating the hyperfine spectrum of any atom under investigation, the model is based on the likelihood that an atom/ion reaches the region where the hyperfine spectrum is measured in its original ground state. This likelihood is in turn used the modify the relative intensities of each hyperfine transition. The effects of laser power, the temperature of the atoms/ions, and the distance they must travel before being measured are examined. Additionally, the predictions of the model are compared to previously measured Gallium-69 and Rubidium-87 hyperfine spectra. Discrepancies between the assumed temperature and the temperature predicted by the model were observed in the case of Gallium-69, with a possible resolution being the effects of accelerating the atoms/ions when they are extracted from a Radio Frequency Quadrupole trap used for bunching. In the case of Rubidium-87, a discrepancy between the expected and measured relative intensity of particular transition is observed. This may be due to an over-estimation of the power delivered to the atoms.}
 \AbstractEn%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         French Abstract                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SetAbstractFrName{\MakeUppercase{ABR\'{E}G\'{E}}}%
-\SetAbstractFrText{ The text of the abstract in French begins here.}%
+\SetAbstractFrText{Un model statistique, construit pour la simulation des effets du pompage optique sur les spectres hyperfines mesurés à TRIUMF, est présenté. Les résultats de ce model, construit sur la probabilité qu’une atome arrive dans la région d’interaction dans son état de repos original, sont comparés avec des spectres mesurés du Gallium-69 et Rubidium-87. Dans le cas du Gallium-69, une différence entre la température assumée et la température calculée a été observée, provenant peut-être des effets des voltages appliqués aux atomes lors de leur extraction et accélération. Pour le Rubidium-87, une différence entre les intensités mesurée et calculés de la transition $F_e = 1 \rightarrow F_g = 2$ a été observée, les origines de laquelle viennent d’une surestimation de l’intensité du laser.}%
 \AbstractFr%
 
 \TOCHeading{\MakeUppercase{Table of Contents}}%

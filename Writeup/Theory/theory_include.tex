@@ -7,7 +7,7 @@ Note: Throughout this section, a variable written in a bold typeface is vector v
 \caption[Hyperfine spectrum and level-scheme for Gallium-69.]{Hyperfine spectrum and level-scheme for the 4P$_{3/2}\rightarrow$5S$_{1/2}$ transition in atomic Gallium-69. Photon counts are shown on the vertical axis, while the horizontal shows the energies of the photons. Each allowed transition in the level-scheme is linked to the relevant peak in the hyperfine spectrum.}
 \label{ga69}
 \end{figure}
-How can the properties of a hyperfine spectrum, such as that of $^{69}\mathrm{Ga}$ shown in Fig.\ref{ga69}, be translated into measurements of the physical properties of the nucleus? The hyperfine spectrum is, after all, the result of probing the electronic structure of the atom. The answer, of course, is that the electrons interact with the nucleus through several mechanisms, each of which will be described in this section. To begin, however, consider the following system: An electron transitions from a ground state $\ket{g}$ to an excited state $\ket{e}$. More precisely $\ket{g}$ and $\ket{e}$ are defined as 
+How can the properties of a hyperfine spectrum, such as that of $^{69}\mathrm{Ga}$ shown in Fig.\ref{ga69}, be translated into measurements of the physical properties of the nucleus? The hyperfine spectrum is, after all, the result of probing the electronic structure of the atom. The answer is that the electrons interact with the nucleus through several mechanisms, each of which will be described in this section. To begin, however, consider the following system: An electron transitions from a ground state $\ket{g}$ to an excited state $\ket{e}$. More precisely $\ket{g}$ and $\ket{e}$ are defined as 
 \begin{align}
 \ket{g} =& \ket{n_g,\mathrm{\bf{J}_g,J_{g,z}}}\\
 \ket{e} =& \ket{n_e,\mathrm{\bf{J}_e,J_{e,z}}},
@@ -25,18 +25,18 @@ $\bf{F}$ describes the total angular momentum state of the atom, so $\ket{g}$ an
 \end{align}
 For a fixed I, F can range from $(|\mathrm{I-J}|)$ to $(|\mathrm{I+J}|)$.
 \subsection{Peak Energies}
-The energy of the electrons depends on the various electron-nucleus interactions present in the atom. If for the purposes of this work, only three interactions aer considered. These are the isotope, magnetic dipole and electric quadrupole shifts, which lead to energy shifts on the order of roughly $10^{-7}-10^{-4}$ eV \cite{ModAN}. There are higher order interactions (magnetic octopole, electric hexadecapole), however their effects are far below the resolution of $\approx 10^{-8}$ eV of the experimental set-up employed at TRIUMF\cite{GA69}.
+The energy of the electrons depends on the various electron-nucleus interactions present in the atom. For the purposes of this work, only three interactions aer considered. These are the isotope, magnetic dipole and electric quadrupole shifts, which lead to energy shifts on the order of roughly $10^{-7}-10^{-4}$ eV \cite{ModAN}. There are higher order interactions (magnetic octopole, electric hexadecapole), however their effects are far below the resolution of $\approx 10^{-8}$ eV of the experimental set-up employed at TRIUMF\cite{GA69}.
 
 \subsubsection{Isotope Shift}
 The isotope shift is measured with respect to a reference isotope. As neutrons are added or removed from a nucleus, the charge distribution, as well as the mass, of the nucleus changes. This leads to three different effects on the energies of the electrons. 
 
-The change in the mass of the nucleus leads to what is known as the Mass shift, $\Delta E_M$. The mass shift between two isotopes with mass numbers A and A' is given by \citep{TomT}
+The change in the mass of the nucleus leads to what is known as the Mass Shift, $\Delta E_M$. The Mass Shift between two isotopes with mass numbers A and A' is given by \citep{TomT}
 \begin{equation}
 \Delta E_M = \frac{m_{\mathrm{A}}-m_{\mathrm{A'}}}{2 m_{\mathrm{A}} m_{\mathrm{A'}}} \left(\sum_i\mathrm{\textbf{p}}_i +2 \sum_{i>j}\mathrm{\textbf{p}}_i \cdot \mathrm{\textbf{p}}_j \right)
 \end{equation}
 where $m_{\mathrm{A}}$ and $m_{\mathrm{A'}}$ are the isotope masses, and $\textbf{p}_i$ is the momentum of the i$^{\mathrm{th}}$ election. The first term is the Bohr reduced mass equation arising from the change in the center of mass of the system.
 
-The change in the charge distribution of the nucleus produces the Field shift. While the typical nucleus is far smaller the wavefunction of a typical orbital electron, the effect is still important. The energy of a nucleus in the charge density produced by the electrons at the origin, $E_F$, is given by
+The change in the charge distribution of the nucleus produces the Field Shift. While the typical nucleus is far smaller the wavefunction of a typical orbital electron, the effect is still important. The energy of a nucleus in the charge density produced by the electrons at the origin, $E_F$, is given by
 
 \begin{equation}
 E_F = \frac{Ze^2}{6 \epsilon_0}|\psi(0)|^2 \left\langle r_{ch}^2\right\rangle
@@ -127,6 +127,7 @@ Eq. \ref{B-eq} has singularities at I = $\frac{1}{2}$ and J=$\frac{1}{2}$. This 
 The resonant energy of a transition between $\ket{g}=\ket{n_g,\mathrm{\textbf{F}_g=\textbf{I} + \textbf{J}_g}}$ and $\ket{e}=\ket{n_e,\mathrm{\textbf{F}_e=\textbf{I} + \textbf{J}_e}}$ is then given by
 \begin{equation}
 E_{hfs} = E_{fs} +  \Delta E_{\mathrm{A,A'}}+\Delta E_{\mu_I}\Bigr|_{\mathrm{F_g},I,J_g}^{\mathrm{F_e},I,J_e}+\Delta E_{\mathrm{Q_s}}\Bigr|_{\mathrm{F_g},I,J_g}^{\mathrm{F_e},I,J_e}.
+\label{HFE}
 \end{equation}
 
 \noindent When a hyperfine spectrum is fitted, the fit parameters which govern the locations of the peaks are the hyperfine parameters $A$ and $B$ for both $\ket{e}$ and $\ket{g}$, as well as what is known as the centroid, $\nu_0$. The centroid combines the fine structure energy and the isotope shift into one quantity. It is important to note that while the values of hyperfine coefficients can be directly linked to the physical properties of the nucleus, only the change in the centroid with respect to a reference isotope can be used to measure the change in the mean-square charge radius.
@@ -161,7 +162,7 @@ Stimulated emission occurs when an atom in an excited state is in the presence o
 \begin{equation}
 \frac{1}{\tau}= \frac{1}{\tau_0}\sqrt{1+\frac{I}{I_s}},
 \end{equation}
-where $I$ is the laser intensity and $I_s$ is the saturating laser intensity, which occurs when the rate of absorbtion is equal to the rate of stimulated emission on resonance. The expected lifetime of an excited electron decreases, resulting in a Lorentzian contribution to the lineshape as a consequence of the energy-time version of the uncertainty principal\cite{TomT}.
+where $I$ is the laser intensity and $I_s$ is the saturating laser intensity, which occurs when the rate of absorption is equal to the rate of stimulated emission on resonance. The expected lifetime of an excited electron decreases, resulting in a Lorentzian contribution to the lineshape as a consequence of the energy-time version of the uncertainty principal\cite{TomT}.
 \subsubsection{Doppler Broadening}
 Doppler broadening occurs when the atoms have a thermal velocity spread along the direction of propagation. This velocity spread leads to a shift in the frequency of the laser observed as by the atoms. The velocity distribution of a collection of atoms with mass $m_A$ at temperature $T$, along an axis $z$, is given by the so-called Maxwell-Boltzmann distribution \cite{thermal}
 \begin{equation}
@@ -255,7 +256,7 @@ where $N_{nJ}$ is a normalization constant and $J_{n-J-1}^{2J+1}(\rho)$ are the 
 J_{n}^{m}(r) = \sum_{k=0}^{n} c_kr^k
 \end{equation}
 
-It is possible to extend this analysis to atomic structures that have an isolated electron sitting on top of a closed shell. This is done using the effective principal quantum number $n^*= n - \delta_{J}$, where $\delta_{J}$ is called the quantum defect and depends on the orbital angular momentum \textbf{J}. This extended analysis is, however, not necessary, as an empirical measure of $ \mathcal{R}^2_{n_e J_e, n_g J_g}$ is easily obtained, and remains constant over all hyperfine transitions. This is done through the use of the decay rate of the fine-structure transition, $\gamma_f$. From Eq. \ref{totdec}, the decay rate of the fine-structure excited state is given by
+It is possible to extend this analysis to atomic structures that have an isolated electron sitting outside a closed shell. This is done using the effective principal quantum number $n^*= n - \delta_{J}$, where $\delta_{J}$ is called the quantum defect and depends on the orbital angular momentum \textbf{J}. This extended analysis is, however, not necessary, as an empirical measure of $ \mathcal{R}^2_{n_e J_e, n_g J_g}$ is easily obtained, and remains constant over all hyperfine transitions. This is done through the use of the decay rate of the fine-structure transition, $\gamma_f$. From Eq. \ref{totdec}, the decay rate of the fine-structure excited state is given by
 \begin{equation}
 \frac{1}{\gamma_f} = 3 \pi \epsilon_0 \hbar c^3 \sum_i \frac{1}{\omega_i^3 \mu_i^2}
 \end{equation}

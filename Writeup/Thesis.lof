@@ -1,16 +1,19 @@
 \contentsline {figure}{\numberline {{2--1}}{\ignorespaces The location of the CFBS experiment}}{5}
 \contentsline {figure}{\numberline {{2--2}}{\ignorespaces Schematic of the CFBS experiment at TRIUMF}}{6}
-\contentsline {figure}{\numberline {{2--3}}{\ignorespaces The charge exchange cell.}}{7}
+\contentsline {figure}{\numberline {{2--3}}{\ignorespaces The charge exchange cell.}}{8}
 \contentsline {figure}{\numberline {{2--4}}{\ignorespaces Schematic of the light collection region.}}{8}
 \contentsline {figure}{\numberline {{3--1}}{\ignorespaces Hyperfine spectrum and level-scheme for Gallium-69.}}{10}
 \contentsline {figure}{\numberline {{3--2}}{\ignorespaces Oblate vs. Prolate vs. Spherical}}{14}
 \contentsline {figure}{\numberline {{4--1}}{\ignorespaces Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208.}}{26}
 \contentsline {figure}{\numberline {{4--2}}{\ignorespaces Toy model of a hyperfine system with two ground states.}}{27}
-\contentsline {figure}{\numberline {{4--3}}{\ignorespaces Flow chart detailing the steps undertaken by the algorithm to follow the atom as it moves through the IR. The green ellipses and blue rectangles compose the interaction loop of the simulation, where the atom interacts with the laser and goes through excitation/decay cycles. Finally, the yellow rectangle is the end point of the loop, and occurs when then atom has moved beyond the IR. \relax }}{32}
+\contentsline {figure}{\numberline {{4--3}}{\ignorespaces Flow chart detailing the steps undertaken by the alternative algorithm to follow the atom as it moves through the IR.}}{32}
 \contentsline {figure}{\numberline {{5--1}}{\ignorespaces Comparison between a measured spectrum of Gallium-69 and a spectrum simulated.}}{39}
 \contentsline {figure}{\numberline {{5--2}}{\ignorespaces Reduced $\chi ^2$ statistic as a function of the temperature used in the simulation of a Gallium-69 hyperfine spectrum.}}{41}
-\contentsline {figure}{\numberline {{5--3}}{\ignorespaces The effects of the temperature on the hyperfine spectrum of Gallium-69.}}{41}
-\contentsline {figure}{\numberline {{5--4}}{\ignorespaces The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69.}}{42}
-\contentsline {figure}{\numberline {{5--6}}{\ignorespaces Comparison between the simulated and measured hyperfine spectra of Rubidium-87 for different laser powers.}}{44}
-\contentsline {figure}{\numberline {{5--7}}{\ignorespaces Continuation of Fig. {5--6}\hbox {}.}}{45}
-\contentsline {figure}{\numberline {{5--8}}{\ignorespaces The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87.}}{46}
+\contentsline {figure}{\numberline {{5--3}}{\ignorespaces The effects of the temperature on the hyperfine spectrum of Gallium-69.}}{42}
+\contentsline {figure}{\numberline {{5--4}}{\ignorespaces The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69.}}{43}
+\contentsline {figure}{\numberline {{5--5}}{\ignorespaces The effects of the power of the exciting laser on a simulated Gallium-69 spectrum for powers between 0.1 and 40 mW.}}{43}
+\contentsline {figure}{\numberline {{5--6}}{\ignorespaces The effects of the power of the exciting laser on a simulated Gallium-69 spectrum for powers between 50 and 100 mW.}}{44}
+\contentsline {figure}{\numberline {{5--7}}{\ignorespaces Level-scheme of Rubidium-87.}}{45}
+\contentsline {figure}{\numberline {{5--8}}{\ignorespaces Comparison between the simulated and measured hyperfine spectra of Rubidium-87 for different laser powers.}}{46}
+\contentsline {figure}{\numberline {{5--9}}{\ignorespaces Continuation of Fig. {5--8}\hbox {}.}}{47}
+\contentsline {figure}{\numberline {{5--10}}{\ignorespaces The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87.}}{48}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 DEC 2017 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 DEC 2017 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1418,43 +1418,43 @@ ABD: EveryShipout initializing macros [1
 ] [3
 
 
-] [4
-
-] (./Thesis.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+] [4]
+LaTeX Font Info:    Try loading font information for U+msa on input line 95.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+LaTeX Font Info:    Try loading font information for U+msb on input line 95.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [5
+
+]
+(./Thesis.toc [6
 
 
 ])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [6]
-(./Thesis.lot)
+ [7] (./Thesis.lot)
 \tf@lot=\write5
 \openout5 = `Thesis.lot'.
-
- [7
-
-
-
-] (./Thesis.lof)
-\tf@lof=\write6
-\openout6 = `Thesis.lof'.
 
  [8
 
 
 
-] [9]
+] (./Thesis.lof [9
+
+
+
+])
+\tf@lof=\write6
+\openout6 = `Thesis.lof'.
+
+ [10]
 ***************************
 CHAPTER 1.
 ***************************
@@ -1466,7 +1466,7 @@ CHAPTER 1.
 CHAPTER 2.
 ***************************
 (./Laser_spec_triumf/laser_spec_triumf.tex
-<Laser_spec_triumf/ISAC.png, id=49, 1779.64874pt x 1204.5pt>
+<Laser_spec_triumf/ISAC.png, id=54, 1779.64874pt x 1204.5pt>
 File: Laser_spec_triumf/ISAC.png Graphic file (type png)
 
 <use Laser_spec_triumf/ISAC.png>
@@ -1476,7 +1476,7 @@ Package pdftex.def Info: Laser_spec_triumf/ISAC.png used on input line 7.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Laser_spec_triumf/experiment.png, id=50, 1122.1925pt x 590.205pt>
+<Laser_spec_triumf/experiment.png, id=55, 1122.1925pt x 590.205pt>
 File: Laser_spec_triumf/experiment.png Graphic file (type png)
 
 <use Laser_spec_triumf/experiment.png>
@@ -1490,25 +1490,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [4
 
 ] [5 <./Laser_spec_triumf/ISAC.png>] [6 <./Laser_spec_triumf/experiment.png>] <
-Laser_spec_triumf/CEC.png, id=66, 534.99875pt x 626.34pt>
+Laser_spec_triumf/CEC.png, id=68, 534.99875pt x 626.34pt>
 File: Laser_spec_triumf/CEC.png Graphic file (type png)
 
 <use Laser_spec_triumf/CEC.png>
 Package pdftex.def Info: Laser_spec_triumf/CEC.png used on input line 33.
 (pdftex.def)             Requested size: 294.25021pt x 344.48805pt.
 
-<Laser_spec_triumf/LCR.png, id=67, 1017.8025pt x 549.05125pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Laser_spec_triumf/LCR.png, id=69, 1017.8025pt x 549.05125pt>
 File: Laser_spec_triumf/LCR.png Graphic file (type png)
 
 <use Laser_spec_triumf/LCR.png>
 Package pdftex.def Info: Laser_spec_triumf/LCR.png used on input line 45.
 (pdftex.def)             Requested size: 356.23622pt x 192.1708pt.
- [7 <./Laser_spec_triumf/CEC.png>]) [8 <./Laser_spec_triumf/LCR.png>]
+) [7] [8 <./Laser_spec_triumf/CEC.png> <./Laser_spec_triumf/LCR.png>]
 ***************************
 CHAPTER 3.
 ***************************
 (./Theory/theory_include.tex
-<Graphics/spec_with_peaks_4.png, id=76, 609.27625pt x 522.95375pt>
+<Graphics/spec_with_peaks_4.png, id=79, 609.27625pt x 522.95375pt>
 File: Graphics/spec_with_peaks_4.png Graphic file (type png)
 
 <use Graphics/spec_with_peaks_4.png>
@@ -1521,7 +1524,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [9
 
 ] [10 <./Graphics/spec_with_peaks_4.png>] [11] [12]
-<Graphics/Q_pic.png, id=97, 754.82pt x 272.01625pt>
+<Graphics/Q_pic.png, id=100, 754.82pt x 272.01625pt>
 File: Graphics/Q_pic.png Graphic file (type png)
  <use Graphics/Q_pic.png>
 Package pdftex.def Info: Graphics/Q_pic.png used on input line 93.
@@ -1536,7 +1539,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 CHAPTER 4.
 ***************************
 (./Optical_Pumping/optical_pumping_include.tex
-<Graphics/francium.png, id=141, 838.13126pt x 634.37pt>
+<Graphics/francium.png, id=144, 838.13126pt x 634.37pt>
 File: Graphics/francium.png Graphic file (type png)
 
 <use Graphics/francium.png>
@@ -1546,7 +1549,7 @@ Package pdftex.def Info: Graphics/francium.png used on input line 7.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Graphics/Toy_model.png, id=142, 479.7925pt x 317.185pt>
+<Graphics/Toy_model.png, id=145, 479.7925pt x 317.185pt>
 File: Graphics/Toy_model.png Graphic file (type png)
 
 <use Graphics/Toy_model.png>
@@ -1560,200 +1563,210 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26 <./Graphics/francium.png>] [27 <./Graphics/Toy_model.png>] [28] [29]
 [30] [31]
-Overfull \hbox (7.94722pt too wide) in paragraph at lines 168--170
-[][]
+Overfull \hbox (7.94722pt too wide) in paragraph at lines 165--166
+[][] 
  []
 
+[32] [33] [34] [35] [36]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 251.
 
-Package caption Warning: \label without proper \caption on input line 169.
-See the caption package documentation for explanation.
 
-
-LaTeX Warning: Reference `pipeline' on page 32 undefined on input line 179.
-
-[32] [33]
-
-LaTeX Warning: Reference `scat_rate' on page 34 undefined on input line 213.
-
-[34] [35]
-
-LaTeX Warning: Reference `HFE' on page 36 undefined on input line 228.
-
-[36]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 253.
-
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
- [37])
-[38]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 251.
+ [37]) [38]
 ***************************
 CHAPTER 5.
 ***************************
 (./Results/results_include.tex
-<Graphics/Ga-69-vs-sim.png, id=190, 578.16pt x 433.62pt>
+<Graphics/Ga-69-vs-sim.png, id=193, 578.16pt x 433.62pt>
 File: Graphics/Ga-69-vs-sim.png Graphic file (type png)
 
 <use Graphics/Ga-69-vs-sim.png>
 Package pdftex.def Info: Graphics/Ga-69-vs-sim.png used on input line 8.
-(pdftex.def)             Requested size: 317.60121pt x 238.2006pt.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Graphics/temp_chi.png, id=191, 578.16pt x 433.62pt>
+<Graphics/temp_chi.png, id=194, 578.16pt x 433.62pt>
 File: Graphics/temp_chi.png Graphic file (type png)
 
 <use Graphics/temp_chi.png>
-Package pdftex.def Info: Graphics/temp_chi.png used on input line 36.
-(pdftex.def)             Requested size: 317.60121pt x 238.2006pt.
+Package pdftex.def Info: Graphics/temp_chi.png used on input line 28.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
  [39
 
  <./Graphics/Ga-69-vs-sim.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Graphics/temp_comparison.png, id=197, 578.16pt x 433.62pt>
+<Graphics/temp_comparison.png, id=200, 578.16pt x 433.62pt>
 File: Graphics/temp_comparison.png Graphic file (type png)
 
 <use Graphics/temp_comparison.png>
-Package pdftex.def Info: Graphics/temp_comparison.png used on input line 48.
-(pdftex.def)             Requested size: 317.60121pt x 238.2006pt.
-
+Package pdftex.def Info: Graphics/temp_comparison.png used on input line 40.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
+ [40]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Graphics/dist_comparison.png, id=198, 578.16pt x 433.62pt>
+<Graphics/dist_comparison.png, id=205, 578.16pt x 433.62pt>
 File: Graphics/dist_comparison.png Graphic file (type png)
 
 <use Graphics/dist_comparison.png>
-Package pdftex.def Info: Graphics/dist_comparison.png used on input line 58.
-(pdftex.def)             Requested size: 317.60121pt x 238.2006pt.
- [40]
+Package pdftex.def Info: Graphics/dist_comparison.png used on input line 50.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
+ [41 <./Graphics/temp_chi.png>]
 
-LaTeX Warning: Text page 41 contains only floats.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41 <./Graphics/temp_chi.png> <./Graphics/temp_comparison.png>]
-<Graphics/Power_comparison(1-40).png, id=209, 578.16pt x 433.62pt>
+
+Package caption Warning: \label without proper \caption on input line 64.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `power1-40' on page 42 undefined on input line 57.
+
+<Graphics/Power_comparison(1-40).png, id=211, 578.16pt x 433.62pt>
 File: Graphics/Power_comparison(1-40).png Graphic file (type png)
 
 <use Graphics/Power_comparison(1-40).png>
 Package pdftex.def Info: Graphics/Power_comparison(1-40).png used on input line
- 70.
-(pdftex.def)             Requested size: 297.75pt x 223.30687pt.
+ 61.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
 
-<Graphics/Power_comparison(50-100).png, id=210, 578.16pt x 433.62pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphics/Power_comparison(50-100).png, id=212, 578.16pt x 433.62pt>
 File: Graphics/Power_comparison(50-100).png Graphic file (type png)
 
 <use Graphics/Power_comparison(50-100).png>
 Package pdftex.def Info: Graphics/Power_comparison(50-100).png used on input li
-ne 76.
-(pdftex.def)             Requested size: 297.75pt x 223.30687pt.
- [42 <./Graphics/dist_comparison.png>] [43 <./Graphics/Power_comparison(1-40).p
-ng> <./Graphics/Power_comparison(50-100).png>]
-Overfull \hbox (14.12492pt too wide) in paragraph at lines 85--86
-[]\OT1/cmr/m/n/12 In a re-cent ex-per-i-men-tal run at TRI-UMF, a hy-per-fine s
-pec-trum of Rubidium-
- []
+ne 69.
+(pdftex.def)             Requested size: 337.45242pt x 253.08774pt.
 
-<Graphics/100_101.png, id=220, 505.89pt x 385.1991pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42 <./Graphics/temp_comparison.png>]
+Overfull \vbox (16.3471pt too high) has occurred while \output is active []
+
+
+[43 <./Graphics/dist_comparison.png> <./Graphics/Power_comparison(1-40).png>]
+<Graphics/rb-1.png, id=222, 607.26875pt x 504.88625pt>
+File: Graphics/rb-1.png Graphic file (type png)
+ <use Graphics/rb-1.png>
+Package pdftex.def Info: Graphics/rb-1.png used on input line 79.
+(pdftex.def)             Requested size: 397.0pt x 330.07503pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Graphics/100_101.png, id=223, 505.89pt x 385.1991pt>
 File: Graphics/100_101.png Graphic file (type png)
 
 <use Graphics/100_101.png>
-Package pdftex.def Info: Graphics/100_101.png used on input line 90.
+Package pdftex.def Info: Graphics/100_101.png used on input line 87.
 (pdftex.def)             Requested size: 194.53218pt x 148.12283pt.
 
-<Graphics/098_099.png, id=221, 506.6127pt x 388.0899pt>
+<Graphics/098_099.png, id=224, 506.6127pt x 388.0899pt>
 File: Graphics/098_099.png Graphic file (type png)
 
 <use Graphics/098_099.png>
-Package pdftex.def Info: Graphics/098_099.png used on input line 94.
+Package pdftex.def Info: Graphics/098_099.png used on input line 91.
 (pdftex.def)             Requested size: 194.53218pt x 149.02127pt.
 
-<Graphics/119_120.png, id=222, 504.4446pt x 390.258pt>
+<Graphics/119_120.png, id=225, 504.4446pt x 390.258pt>
 File: Graphics/119_120.png Graphic file (type png)
 
 <use Graphics/119_120.png>
-Package pdftex.def Info: Graphics/119_120.png used on input line 100.
+Package pdftex.def Info: Graphics/119_120.png used on input line 97.
 (pdftex.def)             Requested size: 194.53218pt x 150.49692pt.
 
-<Graphics/096_097.png, id=223, 514.5624pt x 385.1991pt>
+<Graphics/096_097.png, id=226, 514.5624pt x 385.1991pt>
 File: Graphics/096_097.png Graphic file (type png)
 
 <use Graphics/096_097.png>
-Package pdftex.def Info: Graphics/096_097.png used on input line 104.
+Package pdftex.def Info: Graphics/096_097.png used on input line 101.
 (pdftex.def)             Requested size: 194.53218pt x 145.62483pt.
- [44 <./Graphics/100_101.png> <./Graphics/098_099.png> <./Graphics/119_120.png>
- <./Graphics/096_097.png>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44 <./Graphics/Power_comparison(50-100).png>]
 <Graphics/107_108.png, id=231, 513.8397pt x 383.7537pt>
 File: Graphics/107_108.png Graphic file (type png)
 
 <use Graphics/107_108.png>
-Package pdftex.def Info: Graphics/107_108.png used on input line 116.
+Package pdftex.def Info: Graphics/107_108.png used on input line 113.
 (pdftex.def)             Requested size: 194.53218pt x 145.28334pt.
 
 <Graphics/094_095.png, id=232, 515.2851pt x 388.8126pt>
 File: Graphics/094_095.png Graphic file (type png)
 
 <use Graphics/094_095.png>
-Package pdftex.def Info: Graphics/094_095.png used on input line 120.
+Package pdftex.def Info: Graphics/094_095.png used on input line 117.
 (pdftex.def)             Requested size: 194.53218pt x 146.78326pt.
 
 <Graphics/121_122.png, id=233, 514.5624pt x 386.6445pt>
 File: Graphics/121_122.png Graphic file (type png)
 
 <use Graphics/121_122.png>
-Package pdftex.def Info: Graphics/121_122.png used on input line 126.
+Package pdftex.def Info: Graphics/121_122.png used on input line 123.
 (pdftex.def)             Requested size: 194.53218pt x 146.17126pt.
 
 <Graphics/111_112.png, id=234, 512.3943pt x 387.3672pt>
 File: Graphics/111_112.png Graphic file (type png)
 
 <use Graphics/111_112.png>
-Package pdftex.def Info: Graphics/111_112.png used on input line 130.
+Package pdftex.def Info: Graphics/111_112.png used on input line 127.
 (pdftex.def)             Requested size: 194.53218pt x 147.06511pt.
- [45 <./Graphics/107_108.png> <./Graphics/094_095.png> <./Graphics/121_122.png>
- <./Graphics/111_112.png>]
-<Graphics/113_114.png, id=242, 513.117pt x 388.8126pt>
+ [45 <./Graphics/rb-1.png>] [46 <./Graphics/100_101.png> <./Graphics/098_099.pn
+g> <./Graphics/119_120.png> <./Graphics/096_097.png>] <Graphics/113_114.png, id
+=247, 513.117pt x 388.8126pt>
 File: Graphics/113_114.png Graphic file (type png)
 
 <use Graphics/113_114.png>
-Package pdftex.def Info: Graphics/113_114.png used on input line 141.
+Package pdftex.def Info: Graphics/113_114.png used on input line 138.
 (pdftex.def)             Requested size: 194.53218pt x 147.40622pt.
 
-<Graphics/115_116.png, id=243, 513.117pt x 389.5353pt>
+<Graphics/115_116.png, id=248, 513.117pt x 389.5353pt>
 File: Graphics/115_116.png Graphic file (type png)
 
 <use Graphics/115_116.png>
-Package pdftex.def Info: Graphics/115_116.png used on input line 146.
+Package pdftex.def Info: Graphics/115_116.png used on input line 143.
 (pdftex.def)             Requested size: 194.53218pt x 147.6802pt.
 
-<Graphics/117_118.png, id=244, 514.5624pt x 388.8126pt>
+<Graphics/117_118.png, id=249, 514.5624pt x 388.8126pt>
 File: Graphics/117_118.png Graphic file (type png)
 
 <use Graphics/117_118.png>
-Package pdftex.def Info: Graphics/117_118.png used on input line 151.
+Package pdftex.def Info: Graphics/117_118.png used on input line 148.
 (pdftex.def)             Requested size: 194.53218pt x 146.99092pt.
 
-<Graphics/chi-v-power.png, id=245, 502.9992pt x 399.6531pt>
+<Graphics/chi-v-power.png, id=250, 502.9992pt x 399.6531pt>
 File: Graphics/chi-v-power.png Graphic file (type png)
 
 <use Graphics/chi-v-power.png>
-Package pdftex.def Info: Graphics/chi-v-power.png used on input line 156.
+Package pdftex.def Info: Graphics/chi-v-power.png used on input line 153.
 (pdftex.def)             Requested size: 194.53218pt x 154.56516pt.
-) [46 <./Graphics/113_114.png> <./Graphics/115_116.png> <./Graphics/117_118.png
-> <./Graphics/chi-v-power.png>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [47 <./Graphics/107_108.png> <./Graphics/094_095.png> <./Graphics/121_122.png
+> <./Graphics/111_112.png>] [48 <./Graphics/113_114.png> <./Graphics/115_116.pn
+g> <./Graphics/117_118.png> <./Graphics/chi-v-power.png>]
 ***************************
 CHAPTER 6.
 ***************************
-(./conclusion/conclusion_include.tex) [47
+(./conclusion/conclusion_include.tex) [49
 
-] [48
+] [50
 
 
 ]
@@ -1766,81 +1779,19 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 5.
- [49
+ [51
 
 ]
-[50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
-[65]) (./Thesis.bbl [66]
-Underfull \hbox (badness 1983) in paragraph at lines 9--16
-[]\OT1/cmr/m/n/12 Albert A. Michel-son.  On the ap-pli-ca-tion of in-ter-fer-en
-ce meth-
- []
-
-
-Underfull \hbox (badness 2205) in paragraph at lines 9--16
-\OT1/cmr/m/n/12 ods to spec-tro-scopic measurements.--ii.  \OT1/cmr/m/it/12 The
- Lon-don, Ed-in-burgh,
- []
-
-
-Underfull \hbox (badness 4132) in paragraph at lines 9--16
-\OT1/cmr/m/it/12 and Dublin Philo-soph-i-cal Mag-a-zine and Jour-nal of Sci-enc
-e\OT1/cmr/m/n/12 , 34
- []
-
-
-Underfull \hbox (badness 3838) in paragraph at lines 9--16
-\OT1/cmr/m/n/12 (208):280--299, 1892.  doi: 10.1080/14786449208620318.  URL
- []
-
-
-Underfull \hbox (badness 1005) in paragraph at lines 18--26
-\OT1/cmr/m/it/12 wis-senschaften\OT1/cmr/m/n/12 , 12(37):741--743, Sep 1924.  I
-SSN 1432-1904.  doi:
- []
-
-[67
-
-]
-Underfull \hbox (badness 1728) in paragraph at lines 77--79
+[52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66]
+[67]) (./Thesis.bbl [68]
+Underfull \hbox (badness 1728) in paragraph at lines 65--67
 []\OT1/cmr/m/n/12 Wolfram Math-World.  \OT1/cmr/m/it/12 http://mathworld.wolfra
 m.com/Spheroid.html\OT1/cmr/m/n/12 ,
  []
 
+[69
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--86
-[]\OT1/cmr/m/n/12 C. Kit-tel and H. Kroe-mer.  \OT1/cmr/m/it/12 Ther-mal Physic
-s\OT1/cmr/m/n/12 .  W.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--86
-\OT1/cmr/m/n/12 H. Free-man, 1980.  ISBN 9780716710882.  URL
- []
-
-
-Underfull \hbox (badness 3724) in paragraph at lines 120--126
-[]\OT1/cmr/m/n/12 G. J. Farooq-Smith and A. R. et al. Ver-non.  Prob-ing the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--126
-[][]$ \OT1/cmr/m/n/12 ground-state prop-er-ties in the re-gion near $\OML/cmm/m
-/it/12 Z \U/matha/m/n/12 ^^P \OT1/cmr/m/n/12 28$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--126
-\OT1/cmr/m/n/12 with high-resolution laser spec-troscopy.  \OT1/cmr/m/it/12 Phy
-s. Rev. C\OT1/cmr/m/n/12 , 96:
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 120--126
-\OT1/cmr/m/n/12 044324, Oct 2017.  doi: 10.1103/Phys-RevC.96.044324.  URL
- []
-
-[68]) [69] (./Thesis.aux)
+]) [70] (./Thesis.aux)
 
  *File List*
 mcgilletdclass.cls    2004/12/01 v0.1 McGill University Thesis Class
@@ -1947,6 +1898,7 @@ Graphics/temp_comparison.png
 Graphics/dist_comparison.png
 Graphics/Power_comparison(1-40).png
 Graphics/Power_comparison(50-100).png
+Graphics/rb-1.png
 Graphics/100_101.png
 Graphics/098_099.png
 Graphics/119_120.png
@@ -1973,13 +1925,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23251 strings out of 493089
- 447211 string characters out of 6134842
- 620699 words of memory out of 5000000
- 26248 multiletter control sequences out of 15000+600000
+ 23256 strings out of 493089
+ 447252 string characters out of 6134842
+ 620706 words of memory out of 5000000
+ 26252 multiletter control sequences out of 15000+600000
  19273 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,21n,67p,1707b,2654s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,21n,67p,2220b,2654s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -1997,17 +1949,16 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (78 pages, 1818078 bytes).
+5/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Thesis.pdf (80 pages, 1839564 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
+ 413 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

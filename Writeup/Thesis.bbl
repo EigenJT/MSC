@@ -11,8 +11,6 @@ Albert~A. Michelson.
   measurements.--ii.
 \newblock \emph{The London, Edinburgh, and Dublin Philosophical Magazine and
   Journal of Science}, 34\penalty0 (208):\penalty0 280--299, 1892.
-\newblock \doi{10.1080/14786449208620318}.
-\newblock URL \url{https://doi.org/10.1080/14786449208620318}.
 
 \bibitem[Pauli(1924)]{Pauli1924}
 W.~Pauli.
@@ -21,17 +19,13 @@ W.~Pauli.
 \newblock \emph{Naturwissenschaften}, 12\penalty0 (37):\penalty0 741--743, Sep
   1924.
 \newblock ISSN 1432-1904.
-\newblock \doi{10.1007/BF01504828}.
-\newblock URL \url{https://doi.org/10.1007/BF01504828}.
 
 \bibitem[Lieb(2001)]{Lieb2001}
 Klaus-Peter Lieb.
-\newblock Theodor schmidt and hans kopfermann -- pioneers in hyperfine physics.
+\newblock Theodor {S}chmidt and {H}ans {K}opfermann -- {P}ioneers in
+  {H}yperfine {P}hysics.
 \newblock \emph{Hyperfine Interactions}, 136\penalty0 (3):\penalty0 783--802,
   No 2001.
-\newblock ISSN 1572-9540.
-\newblock \doi{10.1023/A:1020506201810}.
-\newblock URL \url{https://doi.org/10.1023/A:1020506201810}.
 
 \bibitem[Voss et~al.(2016)Voss, Procter, Shelbaya, Amaudruz, Buchinger,
   Crawford, Daviel, Man{\'e}, Pearson, and Al~Tamimi]{CFBS}
@@ -43,22 +37,17 @@ A.~Voss, T.~J. Procter, O.~Shelbaya, P.~Amaudruz, F.~Buchinger, J.~E. Crawford,
   A-Accelerators Spectrometers Detectors and Associated Equipment},
   811:\penalty0 57--69, 2016.
 \newblock ISSN 0168-9002.
-\newblock \doi{10.1016/j.nima.2015.11.145}.
-\newblock URL \url{<Go to ISI>://WOS:000368635700009}.
 
 \bibitem[Yang and H.(2010)]{ModAN}
 Fujia Yang and Hamilton~Joseph H.
 \newblock \emph{Modern atomic and nuclear physics}.
 \newblock World Scientific, 2010.
-\newblock ISBN 978-981-283-679-3.
 
-\bibitem[Procter and Billowes(2012)]{GA69}
-T.~J. Procter and J.~et~al. Billowes.
+\bibitem[et~al.(2012)]{GA69}
+T.~Procter et~al.
 \newblock Nuclear mean-square charge radii of ${}^{63,64,66,68-82}$ga nuclei:
   No anomalous behavior at $n=32$.
-\newblock \emph{Phys. Rev. C}, 86:\penalty0 034329, Sep 2012.
-\newblock \doi{10.1103/PhysRevC.86.034329}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevC.86.034329}.
+\newblock \emph{Phys. Rev. C}, 86, Sep 2012.
 
 \bibitem[Procter(2013)]{TomT}
 Thomas Procter.
@@ -71,7 +60,6 @@ Thomas Procter.
 Carlos~A. Bertulani.
 \newblock \emph{Nuclear physics in a nutshell}.
 \newblock Princeton University Press, 2007.
-\newblock ISBN 978-0691125053.
 
 \bibitem[{Wolfram MathWorld}({2017})]{wolf}
 {Wolfram MathWorld}.
@@ -81,47 +69,37 @@ Carlos~A. Bertulani.
 C.~Kittel and H.~Kroemer.
 \newblock \emph{Thermal Physics}.
 \newblock W. H. Freeman, 1980.
-\newblock ISBN 9780716710882.
-\newblock URL \url{https://books.google.ca/books?id=c0R79nyOoNMC}.
 
 \bibitem[Landau and Lifshitz(1975)]{landau1975}
 L.D. Landau and E.M Lifshitz.
 \newblock \emph{The Classical Theory of Fields}.
 \newblock Course of theoretical physics. Butterworth-Heinemann, 1975.
-\newblock ISBN 9780750627689.
 
 \bibitem[Wertheim et~al.(1974)Wertheim, Butler, West, and Buchanan]{voigt}
 G.K. Wertheim, M.A. Butler, K.W. West, and D.N.E. Buchanan.
 \newblock Determination of the gaussian and lorentzian content of experimental
   line shapes.
 \newblock \emph{Review of Scientific Instruments}, 45:\penalty0 1369, 1974.
-\newblock \doi{10.1063/1.1686503}.
 
 \bibitem[Metcalf and Straten(1999)]{LasCool}
 H.J Metcalf and P.~van~der Straten.
 \newblock \emph{Laser Cooling and trapping}.
 \newblock Springer-Verlag New York, 1999.
-\newblock ISBN 978-1-4612-1470-0.
-\newblock \doi{10.1007/978-1-4612-1470-0}.
 
 \bibitem[Townsend(2012)]{townsend}
 John~S. Townsend.
 \newblock \emph{A Modern Approach to Quantum Mechanics}.
 \newblock Univ Science Books, 2012.
-\newblock ISBN 978-1891389788.
 
 \bibitem[Morin(2008)]{cmec}
 D.~Morin.
 \newblock \emph{Introduction to Classical Mechanics}.
 \newblock Cambridge University Press, 2008.
-\newblock ISBN 978-0521876223.
 
 \bibitem[Farooq-Smith and Vernon(2017)]{gapap}
 G.~J. Farooq-Smith and A.~R. et~al. Vernon.
 \newblock {Probing the $_{31}\mathrm{Ga}$ ground-state properties in the region
   near $Z=28$ with high-resolution laser spectroscopy}.
 \newblock \emph{Phys. Rev. C}, 96:\penalty0 044324, Oct 2017.
-\newblock \doi{10.1103/PhysRevC.96.044324}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevC.96.044324}.
 
 \end{thebibliography}

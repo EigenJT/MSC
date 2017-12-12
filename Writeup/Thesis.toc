@@ -1,13 +1,13 @@
 \contentsline {extrachapter}{\MakeUppercase {Acknowledgements}}{ii}
 \contentsline {extrachapter}{\MakeUppercase {Abstract}}{iii}
-\contentsline {extrachapter}{\MakeUppercase {ABR\'{E}G\'{E}}}{iv}
-\contentsline {extrachapter}{\MakeUppercase {List of Tables}}{vii}
-\contentsline {extrachapter}{\MakeUppercase {List of Figures}}{viii}
+\contentsline {extrachapter}{\MakeUppercase {ABR\'{E}G\'{E}}}{v}
+\contentsline {extrachapter}{\MakeUppercase {List of Tables}}{viii}
+\contentsline {extrachapter}{\MakeUppercase {List of Figures}}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {chapter}{\numberline {2}Laser Spectroscopy at TRIUMF}{4}
 \contentsline {section}{\numberline {2.1}Radio Frequency Quadrupole (RFQ) Trap}{4}
 \contentsline {section}{\numberline {2.2}Charge Exchange Cell (CEC)}{6}
-\contentsline {section}{\numberline {2.3}Light Collection Region (LCR)}{8}
+\contentsline {section}{\numberline {2.3}Light Collection Region (LCR)}{7}
 \contentsline {chapter}{\numberline {3}Theory of Laser Spectroscopy}{9}
 \contentsline {section}{\numberline {3.1}Anatomy of a Hyperfine Spectrum}{9}
 \contentsline {subsection}{\numberline {3.1.1}Peak Energies}{11}
@@ -41,7 +41,7 @@
 \contentsline {subsubsection}{Velocity Selection}{33}
 \contentsline {subsubsection}{Ground State Selection}{34}
 \contentsline {subsubsection}{Computation of Excitation Rates}{34}
-\contentsline {subsection}{\numberline {4.4.2}Interaction Loop}{35}
+\contentsline {subsection}{\numberline {4.4.2}Interaction Loop}{34}
 \contentsline {subsubsection}{Excitation Time}{35}
 \contentsline {subsubsection}{Advancing by the Mean Lifetime, Decay and Selection of New Ground State}{35}
 \contentsline {subsection}{\numberline {4.4.3}Simulation of Complete Run}{36}
@@ -49,9 +49,9 @@
 \contentsline {section}{\numberline {5.1}Initial Test}{39}
 \contentsline {section}{\numberline {5.2}Temperature, CEC-LCR Distance and Power}{40}
 \contentsline {subsection}{\numberline {5.2.1}Temperature}{40}
-\contentsline {subsection}{\numberline {5.2.2}CEC-LCR Distance}{42}
+\contentsline {subsection}{\numberline {5.2.2}CEC-LCR Distance}{41}
 \contentsline {subsection}{\numberline {5.2.3}Laser Power}{42}
-\contentsline {subsubsection}{Rubidium-87}{44}
-\contentsline {chapter}{\numberline {6}Conclusion}{47}
-\contentsline {chapter}{Appendices}{48}
-\contentsline {chapter}{\numberline {A}Written Code}{49}
+\contentsline {subsubsection}{Rubidium-87}{43}
+\contentsline {chapter}{\numberline {6}Conclusion}{49}
+\contentsline {chapter}{Appendices}{50}
+\contentsline {chapter}{\numberline {A}Written Code}{51}

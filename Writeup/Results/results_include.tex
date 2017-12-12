@@ -1,12 +1,12 @@
-This section presents and examines the results of the modeling outlined in the previous section. $\S$ \ref{Par_stress} shows the effects of changing important input parameters, such as the temperature, on a simulated spectrum of Gallium-69.  
+\noindent This section presents and examines the results of the modeling outlined in the previous section. $\S$ \ref{Par_stress} shows the effects of changing important input parameters, such as the temperature, on a simulated spectrum of Gallium-69.  
 
 \section{Initial Test}
-As a first test, this Fig. \ref{comp} presents a comparison between a measured spectrum of Gallium-69 and a simulated spectrum generated using the parameters given in Tables \ref{hyperfinecoeff} and \ref{othercoeff}.
+As a first test, this Fig. \ref{comp} presents a comparison between a measured spectrum of Gallium-69 and a simulated spectrum generated using the parameters given in Table \ref{othercoeff}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width = 0.8\textwidth]{Graphics/Ga-69-vs-sim.png}
-\caption[Comparison between a measured spectrum of Gallium-69 and a spectrum simulated.]{\small Comparison between a measured spectrum of Gallium-69 and a spectrum simulated using the parameters given in in Tables \ref{hyperfinecoeff} and \ref{othercoeff}. A reduced $\chi^2$ statistic of 3.167010 is also reported as a measure of accuracy between the simulation and data. A clear difference peak widths of the two spectra can be seen. }
+\includegraphics[width = 0.85\textwidth]{Graphics/Ga-69-vs-sim.png}
+\caption[Comparison between a measured spectrum of Gallium-69 and a spectrum simulated.]{\small Comparison between a measured spectrum of Gallium-69 and a spectrum simulated using the parameters given in in Table \ref{othercoeff}.}
 \label{comp}
 \end{figure}
 
@@ -14,26 +14,18 @@ As a first test, this Fig. \ref{comp} presents a comparison between a measured s
 \centering
 \begin{tabular}{c c c c}\hline
 $A_u$ (MHz)&$A_l$ (MHz)&$B_u$ (MHz)&$B_l$ (MHz)\\ \hline
-1070.908128 & 188.512676 & 0 & 68.333737\\ \hline \\
-\end{tabular}
-\caption[Hyperfine parameters used in the simulation of the spectrum of Gallium-69.]{\small Hyperfine parameters used in the simulation of the spectrum of Gallium-69.\citep{gapap}}
-\label{hyperfinecoeff}
-\end{table}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{c c c}\hline
-Temperature (K)&Power (mW)&CEC-LCR Dist. (m)\\ \hline
+1070.908128 & 188.512676 & 0 & 68.333737 \\ \hline \\ \hline
+Temperature (K)&Power (mW)&CEC-LCR Dist. (m)&\\ \hline
 300 & 1.0 & 0.40\\ \hline \\
 \end{tabular}
-\caption[Other parameters required for the simulation of a hyperfine spectrum.]{\small Other parameters required for the simulation of a hyperfine spectrum. The power and CEC-LCR distance are measured quantities, while the temperature is estimated.}
+\caption[Parameters required for the simulation of a hyperfine spectrum.]{\small Parameters required for the simulation of a hyperfine spectrum. The hyperfine parameters are from a previous measurement of the the spectrum of Gallium-69.\citep{gapap} The power and CEC-LCR distance are measured quantities, while the temperature is estimated.}
 \label{othercoeff}
 \end{table}
 
-A distinct difference in the peak widths between the simulated and measured spectra can be seen in Fig. \ref{comp}, where the simulated spectrum has narrower peaks than the measured spectrum. Since the temperature is merely an estimate based on the cooling methods used to bunch the atoms, it is possible that the estimated temperature is inaccurate. Fig. \ref{chi_temp} shows the reduced $\chi^2$ statistic as a function of the temperature used in the simulation. The estimated temperature of 300 K is lower than the temperature that produces the lowest reduced $\chi^2$ value, occurring at $\sim$910 K.
+A distinct difference in the peak widths between the simulated and measured spectra can be seen in Fig. \ref{comp}, where the simulated spectrum has narrower peaks than the measured spectrum. A reduced $\chi^2$ (defined as $\chi^2 = \frac{1}{N}\sum_i^N \frac{(s_i-m_i)^2}{\sigma_i^2}$, where $s_i$ is the simulated counts, and $m_i$ and $s_i$ are the measured counts and their uncertainty, respectively) statistic of 3.167010 is reported as a measure of accuracy between the simulation and data. Note that the second peak from the left is composed of two transitions. Since the temperature is merely an estimate based on the temperature of the intert gas used to cool the ions in the RFQ, it is possible that this estimation is inaccurate. Fig. \ref{chi_temp} shows the reduced $\chi^2$ statistic  as a function of the temperature used in the simulation. The estimated temperature of 300 K is lower than the temperature that produces the lowest reduced $\chi^2$ value, occurring at $\sim$910 K. This could be due to reheating of the ions as they are extracted from the RFQ and accelerated towards the LCR. 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{Graphics/temp_chi.png}
+\includegraphics[width=0.85\textwidth]{Graphics/temp_chi.png}
 \caption[Reduced $\chi^2$ statistic as a function of the temperature used in the simulation of a Gallium-69 hyperfine spectrum.]{\small The reduced $\chi^2$ statistic as a function of the temperature used in the simulation of a Gallium-69 hyperfine spectrum. The estimated temperature of 300 K is shown, as well as the temperature at which a minimum in the $\chi^2$ value occurs, $\sim$ 910 K.}
 \label{chi_temp}
 \end{figure}
@@ -42,47 +34,52 @@ A distinct difference in the peak widths between the simulated and measured spec
 In this section, the effects of changing the temperature of the beam, the distance between the CEC and the LCR, and  the laser power  are shown and discussed. 
 
 \subsection{Temperature}
-The temperature of the atoms as they interact with the laser is expected to affect the widths of the peaks in the resulting hyperfine spectra. Eq. \ref{temp_width} describes the effects of temperature on the Gaussian contribution to the width of a Voigt profile. Fig \ref{temp_comp} shows the effects of temperature on a simulated spectrum of Gallium-69. As the temperature increases doppler broadening begins to dominate the width of the peaks and the hyperfine structure of the spectrum is diluted. 
+The temperature of the atoms as they interact with the laser is expected to affect the widths of the peaks in the resulting hyperfine spectra. Eq. \ref{temp_width} describes the effects of temperature on the Gaussian contribution to the width of a Voigt profile. Fig \ref{temp_comp} shows the effects of temperature on a simulated spectrum of Gallium-69. As the temperature increases, Doppler broadening begins to dominate over the natural linewidth of the peaks and the hyperfine structure of the spectrum is diluted. 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width = 0.8\textwidth]{Graphics/temp_comparison.png}
+\includegraphics[width = 0.85\textwidth]{Graphics/temp_comparison.png}
 \end{center}
-\caption[The effects of the temperature on the hyperfine spectrum of Gallium-69.]{\small The effects of the temperature on the hyperfine spectrum of Gallium-69. As the temperature of the atoms increases, the doppler contribution to the width of the peaks increases. At sufficiently high temperatures ($\approx 2.0 \times 10^3$ K), the hyperfine structure of the atom begins to smooth out.}
+\caption[The effects of the temperature on the hyperfine spectrum of Gallium-69.]{\small The effects of the temperature on the hyperfine spectrum of Gallium-69. As the temperature of the atoms increases, the Doppler contribution to the width of the peaks increases. At sufficiently high temperatures ($\approx 2.0 \times 10^3$ K), the hyperfine structure of the atom begins to smooth out.}
 \label{temp_comp}
 \end{figure}
 
 \subsection{CEC-LCR Distance}
-Eq.\ref{prob_unchanged} inversely depends on the distance between the CEC and the LCR. The likelihood of an atom reaching the LCR in its original ground state decreases as the CEC-LCR distance increases. Conversely, this likelihood increases as the CEC-LCR distance decreases. Fig \ref{CEC-LCR} shows the effects of changing this distance on a simulated Gallium-69 spectrum. Between 0.1 and 1.0 m, there is no discernible difference between the simulated spectra. As the distance is increased to 2 and then 5 m, optical pumping begins to take effect, with the right-most peak being nearly pumped out at 5 m. 
+Eq.\ref{prob_unchanged} inversely depends on the distance between the CEC and the LCR. The likelihood of an atom reaching the LCR in its original ground state decreases as the CEC-LCR distance increases. Conversely, this likelihood increases as the CEC-LCR distance decreases. Fig \ref{CEC-LCR} shows the effects of changing this distance on a simulated Gallium-69 spectrum, for a fixed power of 1.0 mW. Between 0.1 and 1.0 m, there is no discernible difference between the simulated spectra. As the distance increases, optical pumping begins to have a larger effect. At 5 m, the central peak begins to completely dominate the spectrum at the expense of the smaller peaks near 1.5 and 4 $\times 10^{-3}$+2.9709512 eV.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Graphics/dist_comparison.png}
+\includegraphics[width=0.85\textwidth]{Graphics/dist_comparison.png}
 \end{center}
-\caption[The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69.]{\small The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69. As the distance increases, optical pumping begins to have a larger effect. At 5 m, the central peak begins to completely dominate the spectrum at the expense of the smaller peaks near 1.5 and 4 $\times 10^{-3}$+2.9709512 eV.}
+\caption[The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69.]{\small The effects of changing the CEC-LCR distance on a simulated spectrum of Gallium-69, for a laser power of 1.0 mW.}
 \label{CEC-LCR}
 \end{figure}
 
 \subsection{Laser Power}
-The power of the laser is the most important parameter when simulating the effects of optical pumping on a hyperfine spectrum. This sections first shows the behavior of the model as the power is changed. Figures \ref{power1-40} and \ref{power50-100} show how a simulated spectrum of Gallium-69 changes as the power of the exciting laser is increased from 1.0 to 100 mW. 
+The power of the laser is the most important parameter when simulating the effects of optical pumping on a hyperfine spectrum. This sections first shows the behavior of the model as the power is changed. Figures \ref{power1-40} and \ref{power50-100} show how a simulated spectrum of Gallium-69 changes as the power of the exciting laser is increased from 1.0 to 100 mW. As the power of the laser is increased, certain transitions become less likely with respect to others, changing the relative intensities of the peaks. At laser powers about 20 mW, the spectrum begins to be dominated by the F$_g = 3 \rightarrow$F$_e = 2$ transition. At powers above 50 mW, the spectrum is entirely dominated by this transition.
 
 \begin{figure}[h!]
 \begin{center}
-\begin{subfigure}{0.75\textwidth}
-\includegraphics[width = \textwidth]{Graphics/Power_comparison(1-40).png}
-\caption[The effects of the power of the exciting laser on a simulated Gallium-69 spectrum.]{\small The effects of the power of the exciting laser on a simulated Gallium-69 spectrum are shown above. As the power of the laser is increased, certain transitions become less likely with respect to others, changing the relative intensities of the peaks. }
+\includegraphics[width = 0.85\textwidth]{Graphics/Power_comparison(1-40).png}
+\caption[The effects of the power of the exciting laser on a simulated Gallium-69 spectrum for powers between 0.1 and 40 mW.]{\small The effects of the power of the exciting laser on a simulated Gallium-69 spectrum are shown above for laser powers between 0.1 and 40 mW.}
+\end{center}
 \label{power1-40}
-\end{subfigure}
+\end{figure}
 
-\begin{subfigure}{0.75\textwidth}
-\includegraphics[width = \textwidth]{Graphics/Power_comparison(50-100).png}
-\caption[Continuation of Fig \ref{power1-40}]{\small Increasing the power of the laser causes optical pumping to have a greater effect on the resulting spectrum. Peaks corresponding to transitions that have lower likelihoods of reaching the LCR in their original ground states have relative intensities that decrease with respect to the more resilient peaks. }
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width = 0.85\textwidth]{Graphics/Power_comparison(50-100).png}
+\caption[The effects of the power of the exciting laser on a simulated Gallium-69 spectrum for powers between 50 and 100 mW.]{\small Increasing the power of the laser causes optical pumping to have a greater effect on the resulting spectrum. The above shows the simulated spectrum of Gallium-69 for laser powers between 50 to 100 mW.}
 \label{power50-100}
-\end{subfigure}
 \end{center}
 \end{figure}
 
-\pagebreak
 \subsubsection{Rubidium-87}
-In a recent experimental run at TRIUMF, a hyperfine spectrum of Rubidium-87 (I = 1.5, $J_e$ = 1.5, $J_g$ = 0.5) was examined as the power of the exciting laser was changed. Below are the results of the run, compared to the spectra predicted by the algorithm described in the previous chapter.
+In a recent experimental run at TRIUMF, the hyperfine spectrum of Rubidium-87 (I = 1.5, $J_e$ = 1.5, $J_g$ = 0.5), a level diagram of which is shown in Fig. \ref{rb_diag} was examined as the power of the exciting laser was changed. The experiment was set up in a very similar manner to those described in Chapter \ref{Lspec}. However, rather than collecting Rubidium atoms through the collision of protons with a target material, a stable source of Rubidium was used. Below are the results of the run, compared to the spectra predicted by the algorithm described in the previous chapter.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{Graphics/rb-1.png}
+\caption[Level-scheme of Rubidium-87.]{Level diagram of Rubidium-87.}
+\label{rb_diag}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -105,10 +102,10 @@ In a recent experimental run at TRIUMF, a hyperfine spectrum of Rubidium-87 (I =
         \caption{}
         \label{}
     \end{subfigure}
-    \caption[Comparison between the simulated and measured hyperfine spectra of Rubidium-87 for different laser powers.]{\small Comparison between the simulated (red) and measured (black) hyperfine spectrum of Rubidium-87 for laser power: (a) 4.5 $\mu W$ (b) 8.7 $\mu W$ (c) 12.5 $\mu W$ (d) 18.9 $\mu W$. The lack of data between the two groups of peaks is due to the method of scanning used. To reduce the collection time required, only the regions where peaks were expected were scanned. Also shown are the reduced $\chi^2$ values for each comparison. The simulated spectra tend to exaggerate the effects of optical pumping, exemplified by the predicted height of the left-most peak. In each case, this peak is much lower than the corresponding peak in the measured spectrum. }
+    \caption[Comparison between the simulated and measured hyperfine spectra of Rubidium-87 for different laser powers.]{\small Comparison between the simulated (red) and measured (black) hyperfine spectrum of Rubidium-87 for laser power: (a) 4.5 $\mu W$ (b) 8.7 $\mu W$ (c) 12.5 $\mu W$ (d) 18.9 $\mu W$.}
     \label{power4-18}
 \end{figure}
-Fig. \ref{chi_vs_power} shows the performance of the model when compared to the Rubidium-87 spectra. The reduced $\chi^2$ statistic is reported for each Rubidium spectrum and is plotted as a function of the laser power. As a general trend, the model accuracy decreases as the power increases. Examining the comparisons between the predicted and measured spectra of Rubidium-87, a discrepancy between the expected and measured height of the lowest energy peak, located at $\sim$ 0.75e-5+1.58903 eV, is present across all laser powers, indicating that the model overestimates the effects of optical pumping for this transition ($F_e$ = 1 $F_g$ = 0).
+Fig. \ref{power4-18} shows the performance of the simulation for laser powers of 4.5 to 18.9 $\mu$W. The lack of data between the two groups of peaks is due to the method of scanning used. To reduce the collection time required, only the regions where peaks were expected were scanned. Also shown are the reduced $\chi^2$ values for each comparison. The simulated spectra tend to exaggerate the effects of optical pumping, exemplified by the predicted height of the left-most peak. In each case, this peak is much lower than the corresponding peak in the measured spectrum. This trend continues in Fig. \ref{power22-36} and Fig. \ref{power39-108} where the comparison between the simulated and measured spectra are shown, for powers ranging from 22.1 to 36.4 $\mu$W and 39.1 to 108.0 $\mu$W, respectively. Fig. \ref{chi_vs_power} shows the performance of the model when compared to the Rubidium-87 spectra. The reduced $\chi^2$ statistic is reported for each Rubidium spectrum and is plotted as a function of the laser power. As a general trend, the model accuracy decreases as the power increases. Examining the comparisons between the predicted and measured spectra of Rubidium-87, a discrepancy between the expected and measured height of the lowest energy peak, located at $\sim$ 0.75e-5+1.58903 eV, is present across all laser powers, indicating that the model overestimates the effects of optical pumping for this transition ($F_e$ = 1, $F_g$ = 2). The most likely culprit for this discrepancy is the assumption that 100\% of a the laser power is delivered to the atoms.  
 
 \begin{figure}[t!]
 	\centering
@@ -131,7 +128,7 @@ Fig. \ref{chi_vs_power} shows the performance of the model when compared to the 
         \caption{}
         \label{}
     \end{subfigure}
-    \caption[Continuation of Fig. \ref{power4-18}.]{\small Continuing from Fig. \ref{power4-18}, a comparison between the simulated (red) and measured (black) hyperfine spectrum of Rubidium-87 for laser power: (a) 22.1 $\mu W$ (b) 24.0 $\mu W$ (c) 24.4 $\mu W$ (d) 36.4 $\mu W$. Also shown are the reduced $\chi^2$ values for each comparison. Following the trend shown in the previous spectra, the simulated spectra tend to exaggerate the effects of optical pumping, shown by the discrepancy between the predicted and measured heights of the left-most peak. In each case, this peak is lower than the corresponding peak in the measured spectrum. }
+    \caption[Continuation of Fig. \ref{power4-18}.]{\small Continuing from Fig. \ref{power4-18}, a comparison between the simulated (red) and measured (black) hyperfine spectrum of Rubidium-87 for laser power: (a) 22.1 $\mu W$ (b) 24.0 $\mu W$ (c) 24.4 $\mu W$ (d) 36.4 $\mu W$. Also shown are the reduced $\chi^2$ values for each comparison.}
 \label{power22-36}
 \end{figure}
 \pagebreak
@@ -157,6 +154,6 @@ Fig. \ref{chi_vs_power} shows the performance of the model when compared to the 
         \caption{}
         \label{chi_vs_power}
     \end{subfigure}
-    \caption[The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87.]{\small The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87, compared to the spectra predicted by the method outlined in Chapter \ref {Op_pump} The laser powers are: (a) 39.1 $\mu W$ (b) 50.1 $\mu W$ (c) 108.0 $\mu W$. Also shown are the reduced $\chi^2$ values for each comparison. (d) shows the reduced $\chi^2$ statistic as a function of the power of the exciting laser for the Rubidium-87 experimental run. As the power increases, the model reproduces the spectrum less accurately, as shown by the increase in the value of the $\chi^2$ statistic. }
+    \caption[The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87.]{\small The final set of spectra exploring the effect of the laser power on the hyperfine spectrum on Rubidium-87 for laser powers: (a) 39.1 $\mu W$ (b) 50.1 $\mu W$ (c) 108.0 $\mu W$. Also shown are the reduced $\chi^2$ values for each comparison. (d) shows the reduced $\chi^2$ statistic as a function of the power of the exciting laser for the Rubidium-87 experimental run.}
 \label{power39-108}
 \end{figure}

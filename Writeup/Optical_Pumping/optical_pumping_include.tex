@@ -5,7 +5,7 @@
 However, as the electron goes through a series of excitation/decay cycles, certain ground states will be selected over others, depending on selection rules as well as transition probabilities. Optical pumping manifests itself through the modification of the relative peak heights in a hyperfine spectrum, as shown in Fig. \ref{OP_francium}, where the peak heights of a hyperfine spectrum of Francium show the effects of optical pumping. The expected peak heights as calculated by the Racah intensities are shown in red, and are compared to the intensities measured with the laser continuously on (solid black) and those measured when the laser was pulsed (black outline). The pulsed intensities are similar to the expected intensities, while those measured with a continuous wave (cw) laser deviate significantly.
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{Graphics/francium.png}
-\caption[Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208.]{\small Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208. The Racah intensities are shown in red, while the intensities measured for a continuous wave (cw) laser and a pulsed laser are shown in solid black and black lines, respectively. The cw measurements deviate significantly from the Racah intensities, while the pulsed measurements are closer to the expected intensities.\cite{CFBS}}
+\caption[Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208.]{\small Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208. The Racah intensities are shown in red, while the intensities measured for a continuous wave (cw) laser and a pulsed laser are shown in solid black and black lines, respectively. The Digital Analogue Converter (DAC) is proportional to the laser frequency. The cw measurements deviate significantly from the Racah intensities, while the pulsed measurements are closer to the expected intensities.\cite{CFBS}}
 \label{OP_francium}
 \end{figure}
 
@@ -116,10 +116,10 @@ J_e & J_g & \mathrm{I}
 which results from the combination of Equations \ref{prob_unchanged} and \ref{RACAH}.
 
 \section{Summary}
-In this chapter, optical pumping was treated as a modification to the Racah intensities, which describe the intensities of hyperfine transitions. Optical pumping changes the ground state distribution of the atoms/ions before they enter the LCR. To simulate this effect, the probability of an atom reaching the LCR the without changing ground state was calculated (Sections \ref{pogs} and \ref{pogslcr}) for each hyperfine transition. This probability was a function of the laser power, the distance between the CEC and the LCR, and the likelihood of the transition in question. Once the probability of an atom remaining in it's original ground was known, the corresponding Racah intensity was multiplied to get the adjusted intensity for that particular transition. 
+In this Chapter, optical pumping was treated as a modification to the Racah intensities, which describe the intensities of hyperfine transitions. Optical pumping changes the ground state distribution of the atoms/ions before they enter the LCR. To simulate this effect, the probability of an atom reaching the LCR the without changing ground state was calculated (Sections \ref{pogs} and \ref{pogslcr}) for each hyperfine transition. This probability was a function of the laser power, the distance between the CEC and the LCR, and the likelihood of the transition in question. Once the probability of an atom remaining in its original ground was known, the corresponding Racah intensity was multiplied to get the adjusted intensity for that particular transition. 
 
 \subsection{Previous Method: Monte-Carlo Type Simulation}
-The method developed above is based on statistical ensembles describing the state of the atoms/ions as it passes through the experiment. Previously, a full simulation of each atom as it passed through the experiment was developed. This method was eventually abandoned due to the excessive computation time required. For posterity's sake, it is presented here.
+The method developed above is based on statistical ensembles describing the state of the atoms/ions as they pass through the experiment. Previously, a full simulation of each atom as it passed through the experiment was developed. This method was eventually abandoned due to the excessive computation time required. For posterity's sake, it is mentioned here.
 
 
 In this section, the Monte-Carlo simulation of a hyperfine spectrum measured at TRIUMF is described in detail. $\S$\ref{pip} includes little more than a graphical representation of the algorithm followed when the atoms are interacting with the laser. Each subsequent section is dedicated to an individual step in the algorithm, detailing the logic and computations required at that step. The final section of the chapter shows how a hyperfine spectrum is built through the repeated application of the interaction loop.
@@ -162,12 +162,9 @@ In this section, the Monte-Carlo simulation of a hyperfine spectrum measured at 
 \draw (LCR)-- node[anchor = west] {No} (bl4);
 \draw [arrow] (PHO) -| (exprobs);
 \draw [arrow] (bl4)-|(exprobs);
-
-
-
 \end{tikzpicture}
+\caption[Flow chart detailing the steps undertaken by the alternative algorithm to follow the atom as it moves through the IR.]{\small Flow chart detailing the steps undertaken by the algorithm to follow the atom as it moves through the IR. The green ellipses and blue rectangles compose the interaction loop of the simulation, where the atom interacts with the laser and goes through excitation/decay cycles. Finally, the yellow rectangle is the end point of the loop, and occurs when then atom has moved beyond the IR.}
 \label{pipeline}
-\caption{Flow chart detailing the steps undertaken by the algorithm to follow the atom as it moves through the IR. The green ellipses and blue rectangles compose the interaction loop of the simulation, where the atom interacts with the laser and goes through excitation/decay cycles. Finally, the yellow rectangle is the end point of the loop, and occurs when then atom has moved beyond the IR. }
 \end{figure}
 
 \label{pip}
@@ -210,7 +207,7 @@ P(F_i) = \frac{2F_i+1}{\sum_j 2F_j+1}
 Knowing this, the ground state can be chosen through the generation of a random number $x \in [0,1]$ from a uniform distribution. Each projection is given a range of numbers from 0 to 1, proportional to Eq. \ref{gs_prob}. If $x$ falls in the assigned range, then that ground state is chosen. 
 
 \subsubsection{Computation of Excitation Rates}
-With the ground state and the velocity of the atom now selected, the probability that a transition will occur can be calculated. For each allowed transition between the chosen ground state $F_g$ and an excited state $F_{e,i}$, the transition rate $\gamma_i$ is given by Eq. \ref{scat_rate}. Note that the laser frequency $f_l$ must be shifted according to Eq. \ref{dop_shift}.
+With the ground state and the velocity of the atom now selected, the probability that a transition will occur can be calculated. For each allowed transition between the chosen ground state $F_g$ and an excited state $F_{e,i}$, the transition rate $\gamma_i$ is given by Eq. \ref{scatt_rate}. Note that the laser frequency $f_l$ must be shifted according to Eq. \ref{dop_shift}.
 
 \subsection{Interaction Loop}
 The interaction loop of the algorithm is the place where the atoms undergo several instances of excitation and decay. Also included are regular checks to see in the atom would still be present in the in interaction region, as well as whether or not a released photon would be measured by the light collection system present in the experiment.
@@ -223,12 +220,12 @@ t_e = \sum_i \frac{1}{\gamma_i}
 After time $t_e$, the atom is advanced a distance $d_e = t_ev_a$. If it is still in the interaction region, then an excited state $F_e$ is chosen by sampling a uniform distribution where each transition is given a region proportional to $1/\gamma_i$, in similar style to the method used to select the ground state. If the atom is no longer in the interaction region after $t_e$, then it is discarded and the algorithm moves on to the next atom.
 
 \subsubsection{Advancing by the Mean Lifetime, Decay and Selection of New Ground State}
-Once the excited stated of the atom has been selected, then the atom is advanced a distance $d_l = t_lv_a$ where $t_l$ is the mean lifetime of the excited state. The mean lifetimes of each excited state are computed ( according to $\S$ \ref{ALI}) once at the beginning of the simulation, then stored for later use. If the atom is still in the interaction region after having moved $d_l$, then it decays into one of the allowed ground states. If not, then the simulation moves on to the next atom. As with the selection of the excited state, a uniform distribution is sampled, and each ground state $F_{g,i}$ is given a range of values proportional to the inverse of the lifetime of the transition from the excited state, $F_{e}$, to $F_{g,i}$. 
+Once the excited stated of the atom has been selected, then the atom is advanced a distance $d_l = t_lv_a$ where $t_l$ is the mean lifetime of the excited state. The mean lifetimes of each excited state are computed (according to $\S$ \ref{ALI}) once at the beginning of the simulation, then stored for later use. If the atom is still in the interaction region after having moved $d_l$, then it decays into one of the allowed ground states. If not, then the simulation moves on to the next atom. As with the selection of the excited state, a uniform distribution is sampled, and each ground state $F_{g,i}$ is given a range of values proportional to the inverse of the lifetime of the transition from the excited state, $F_{e}$, to $F_{g,i}$. 
 
 Once a ground state is selected, a photon with energy given by Eq. \ref{HFE} is "released". If the atom is in the light collection region, then this photon is recorded for later analysis. Additionally, a counter that keeps track of the number of photons collected at each beam energy is increased by one. If the atom is not in the LCR, then nothing is recorded, and the excitation-decay process begins again with the computation of excitation rates.
 
 \subsection{Simulation of Complete Run}
-In order to simulate a complete experimental run, a chosen number of atoms, say N, are passed in sequence through the above loop. This is done in turn for each beam energy in a list of energies that are selected such that the Doppler shifted laser energies range from the lowest energy to the highest energy transition, with some leeway on either side. This range can be called $E_r$. The graph of photon counts per beam energy is in fact the hyperfine spectrum.
+In order to simulate a complete experimental run, a chosen number of atoms, say N, are passed in sequence through the above loop. This is done in turn for each beam energy in a list of energies that are selected such that the Doppler shifted laser energies range from the lowest energy to the highest energy transition, with some leeway on either side. This range can be called $E_r$. The graph of photon counts per beam energy is in fact the hyperfine spectrum. Alg. \ref{alg} shows the pseudo-code that is followed for the simulation of a collection of atoms passing through the experiment. Following Alg. \ref{alg} is a list of all the preliminary parameters needed by the simulation in order to compute the necessary quantities presented in this section. 
 
 \vspace{10mm}
 \begin{algorithm}[H]
@@ -244,6 +241,7 @@ In order to simulate a complete experimental run, a chosen number of atoms, say 
  }
  Plot photon count at each beam energy\;
  \caption{Pseudo-code for the simulation of a complete hyperfine spectrum.}
+ \label{alg}
 \end{algorithm}
 
 \vspace{10mm}

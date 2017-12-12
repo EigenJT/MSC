@@ -51,9 +51,10 @@
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
+      <file>apa.dbx</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
-      <file>numeric.bbx</file>
+      <file>apa.bbx</file>
       <file>standard.bbx</file>
       <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
@@ -77,9 +78,6 @@
     </provides>
     <requires type="dynamic">
       <file>Thesis.bcf</file>
-    </requires>
-    <requires type="editable">
-      <file>thesis.bib</file>
     </requires>
   </external>
 </requests>
