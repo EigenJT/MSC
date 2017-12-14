@@ -1,8 +1,8 @@
 \contentsline {extrachapter}{\MakeUppercase {Acknowledgements}}{ii}
 \contentsline {extrachapter}{\MakeUppercase {Abstract}}{iii}
 \contentsline {extrachapter}{\MakeUppercase {ABR\'{E}G\'{E}}}{v}
-\contentsline {extrachapter}{\MakeUppercase {List of Tables}}{viii}
-\contentsline {extrachapter}{\MakeUppercase {List of Figures}}{ix}
+\contentsline {extrachapter}{\MakeUppercase {List of Tables}}{ix}
+\contentsline {extrachapter}{\MakeUppercase {List of Figures}}{x}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {chapter}{\numberline {2}Laser Spectroscopy at TRIUMF}{4}
 \contentsline {section}{\numberline {2.1}Radio Frequency Quadrupole (RFQ) Trap}{4}

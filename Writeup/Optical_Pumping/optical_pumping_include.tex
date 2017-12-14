@@ -5,7 +5,7 @@
 However, as the electron goes through a series of excitation/decay cycles, certain ground states will be selected over others, depending on selection rules as well as transition probabilities. Optical pumping manifests itself through the modification of the relative peak heights in a hyperfine spectrum, as shown in Fig. \ref{OP_francium}, where the peak heights of a hyperfine spectrum of Francium show the effects of optical pumping. The expected peak heights as calculated by the Racah intensities are shown in red, and are compared to the intensities measured with the laser continuously on (solid black) and those measured when the laser was pulsed (black outline). The pulsed intensities are similar to the expected intensities, while those measured with a continuous wave (cw) laser deviate significantly.
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{Graphics/francium.png}
-\caption[Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208.]{\small Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208. The Racah intensities are shown in red, while the intensities measured for a continuous wave (cw) laser and a pulsed laser are shown in solid black and black lines, respectively. The Digital Analogue Converter (DAC) is proportional to the laser frequency. The cw measurements deviate significantly from the Racah intensities, while the pulsed measurements are closer to the expected intensities.\cite{CFBS}}
+\caption[Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208.]{\small Demonstration of the effects of optical pumping on the relative peak heights for a hyperfine spectrum of Francium-208. The Racah intensities are shown in red, while the intensities measured for a continuous wave (cw) laser and a pulsed laser are shown in solid black and black lines, respectively. The Digital Analogue Converter (DAC) is proportional to the laser frequency. The cw measurements deviate significantly from the Racah intensities, while the pulsed measurements are closer to the expected intensities\cite{CFBS}.}
 \label{OP_francium}
 \end{figure}
 
@@ -21,9 +21,9 @@ When the atom is in the excited state, it has probability $P(\bf{F}_3 \rightarro
 \begin{equation}
 N_{\mathrm{cycles}}=\frac{t}{\tau+t_{\mathrm{abs}}}.
 \end{equation}
-rounded down to the closest integer. If at any time, the atom decays to the $\bf{F}_1$ state, then it is no longer on resonance and the chances of a photon being absorbed are negligible. As such, the probability that the atom is in $\bf{F}_2$ after $N_{\mathrm{cycles}}$ is
+rounded down to the closest integer. If at any time, the atom decays to the $\bf{F}_1$ state, then it is no longer on resonance and the chances of a photon being absorbed are negligible. As such, the probability that the atom is in $\bf{F}_2$ after $\mathrm{\bf{N}}_{\mathrm{cycles}}$ is
 \begin{equation}
-P(\bf{F}_2) = P(\bf{F}_3 \rightarrow \bf{F}_2)^{N_{\mathrm{cycles}}}
+P(\bf{F}_2) = P(\bf{F}_3 \rightarrow \bf{F}_2)^{\mathrm{\bf{N}}_{\mathrm{cycles}}}.
 \end{equation}
 As $P(\bf{F}_3 \rightarrow \bf{F}_2) < 1$, then the chances of finding an electron in the $\bf{F}_2$ state decrease as $t$ increases. If, for example, one began measuring the number of resonant photons emitted after time $t$ for a collection of atoms with the above hyperfine structure, the number of photons measured would be reduced by a factor of $P(\bf{F}_2)$. This calculation is the basis for the method used in this work to measure the effect of optical pumping on the atoms being investigated at the CFBS, presented in the following section.
 
@@ -35,9 +35,9 @@ The interaction time, $t_{\mathrm{int}}$ is the time that the atom will be possi
 \begin{equation}
 t_{\mathrm{int}} = \frac{d}{v}.
 \end{equation}
-While $d$ is a static quantity, $v$ changes depending on the frequency of the laser and the resonant frequency of the transition in question. As mentioned in Chapter \ref{Lspec}, the CFBS fixes the frequency of the laser and uses electrodes to alter the speed of the oncoming atoms, shifting the frequency observed by the atoms. Knowing the initial energy of the beam $E_b$ and the mass of the atoms $m_a$, the initial velocity of the atoms is 
+While $d$ is a static quantity, $v$ changes depending on the frequency of the laser and the resonant frequency of the transition in question. As mentioned in Chapter \ref{Lspec}, the CFBS fixes the frequency of the laser and uses electrodes to alter the speed of the oncoming atoms, shifting the frequency observed by the atoms. Knowing the initial energy of the beam $E_b$ and the mass of the atoms $m_A$, the initial velocity of the atoms is 
 \begin{equation}
-v_{\mathrm{init}}=\sqrt{\frac{2E_b}{m_a}},
+v_{\mathrm{init}}=\sqrt{\frac{2E_b}{m_A}},
 \end{equation}
 If the resonant frequency of a transition is $f_{\mathrm{res}}$ and the frequency of the laser is $f_{\mathrm{las}}$, then the velocity at which the atom will observe $f_{\mathrm{res}}$, $v_{\mathrm{res}}$, is described by \cite{cmec}
 \begin{equation}
@@ -122,7 +122,7 @@ In this Chapter, optical pumping was treated as a modification to the Racah inte
 The method developed above is based on statistical ensembles describing the state of the atoms/ions as they pass through the experiment. Previously, a full simulation of each atom as it passed through the experiment was developed. This method was eventually abandoned due to the excessive computation time required. For posterity's sake, it is mentioned here.
 
 
-In this section, the Monte-Carlo simulation of a hyperfine spectrum measured at TRIUMF is described in detail. $\S$\ref{pip} includes little more than a graphical representation of the algorithm followed when the atoms are interacting with the laser. Each subsequent section is dedicated to an individual step in the algorithm, detailing the logic and computations required at that step. The final section of the chapter shows how a hyperfine spectrum is built through the repeated application of the interaction loop.
+In this section, the Monte-Carlo simulation of a hyperfine spectrum measured at TRIUMF is described in detail. $\S$\ref{pip} includes little more than a graphical representation of the algorithm followed when the atoms are interacting with the laser. Each subsequent section is dedicated to an individual step in the algorithm, detailing the logic and computations required at that step. The final section shows how a hyperfine spectrum is built through the repeated application of the interaction loop.
 
 \begin{figure}[h]
 

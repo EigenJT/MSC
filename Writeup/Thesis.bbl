@@ -45,7 +45,7 @@ Fujia Yang and Hamilton~Joseph H.
 
 \bibitem[et~al.(2012)]{GA69}
 T.~Procter et~al.
-\newblock Nuclear mean-square charge radii of ${}^{63,64,66,68-82}$ga nuclei:
+\newblock Nuclear mean-square charge radii of ${}^{63,64,66,68-82}${G}a nuclei:
   No anomalous behavior at $n=32$.
 \newblock \emph{Phys. Rev. C}, 86, Sep 2012.
 
@@ -55,6 +55,11 @@ Thomas Procter.
   Gallium and Francium}.
 \newblock PhD thesis, The University of Manchester, 2013.
 \newblock Unpublished.
+
+\bibitem[Metcalf and Straten(1999)]{LasCool}
+H.J Metcalf and P.~van~der Straten.
+\newblock \emph{Laser Cooling and trapping}.
+\newblock Springer-Verlag New York, 1999.
 
 \bibitem[Bertulani(2007)]{Nut}
 Carlos~A. Bertulani.
@@ -80,11 +85,6 @@ G.K. Wertheim, M.A. Butler, K.W. West, and D.N.E. Buchanan.
 \newblock Determination of the gaussian and lorentzian content of experimental
   line shapes.
 \newblock \emph{Review of Scientific Instruments}, 45:\penalty0 1369, 1974.
-
-\bibitem[Metcalf and Straten(1999)]{LasCool}
-H.J Metcalf and P.~van~der Straten.
-\newblock \emph{Laser Cooling and trapping}.
-\newblock Springer-Verlag New York, 1999.
 
 \bibitem[Townsend(2012)]{townsend}
 John~S. Townsend.

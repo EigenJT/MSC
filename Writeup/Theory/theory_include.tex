@@ -1,4 +1,4 @@
-In this chapter, the theoretical background necessary to the understanding and simulation of a hyperfine spectrum is presented. $\S$ \ref{AHF} describes how the features of a hyperfine spectrum are linked to physical properties of a nucleus, while $\S$ \ref{ALI} outlines the way in which lasers interact with atoms.
+\noindent In this chapter, the theoretical background necessary to the understanding and simulation of a hyperfine spectrum is presented. $\S$ \ref{AHF} describes how the features of a hyperfine spectrum are linked to the physical properties of a nucleus, while $\S$ \ref{ALI} outlines the way in which lasers interact with atoms.
 Note: Throughout this section, a variable written in a bold typeface is vector valued, while its non-bold counterpart is its magnitude. 
 \section{Anatomy of a Hyperfine Spectrum}
 \label{AHF}
@@ -7,12 +7,12 @@ Note: Throughout this section, a variable written in a bold typeface is vector v
 \caption[Hyperfine spectrum and level-scheme for Gallium-69.]{Hyperfine spectrum and level-scheme for the 4P$_{3/2}\rightarrow$5S$_{1/2}$ transition in atomic Gallium-69. Photon counts are shown on the vertical axis, while the horizontal shows the energies of the photons. Each allowed transition in the level-scheme is linked to the relevant peak in the hyperfine spectrum.}
 \label{ga69}
 \end{figure}
-How can the properties of a hyperfine spectrum, such as that of $^{69}\mathrm{Ga}$ shown in Fig.\ref{ga69}, be translated into measurements of the physical properties of the nucleus? The hyperfine spectrum is, after all, the result of probing the electronic structure of the atom. The answer is that the electrons interact with the nucleus through several mechanisms, each of which will be described in this section. To begin, however, consider the following system: An electron transitions from a ground state $\ket{g}$ to an excited state $\ket{e}$. More precisely $\ket{g}$ and $\ket{e}$ are defined as 
+How can the properties of a hyperfine spectrum, such as that of $^{69}\mathrm{Ga}$ shown in Fig. \ref{ga69}, be translated into measurements of the physical properties of the nucleus? The hyperfine spectrum is, after all, the result of probing the electronic structure of the atom. The answer is that the electrons interact with the nucleus through several mechanisms, each of which will be described in this section. To begin, however, consider the following system: An electron transitions from a ground state $\ket{g}$ to an excited state $\ket{e}$. More precisely $\ket{g}$ and $\ket{e}$ are defined as 
 \begin{align}
 \ket{g} =& \ket{n_g,\mathrm{\bf{J}_g,J_{g,z}}}\\
 \ket{e} =& \ket{n_e,\mathrm{\bf{J}_e,J_{e,z}}},
 \end{align}
-where $n_{g,e}$ are principal quantum numbers, and $\bf{J}_{g,e}=\bf{L}_{g,e}+S$ and J$_{g,e}^z$ are the angular momentum and projection of the angular momentum on an axis of quantization $z$, respectively. $\bf{L}$ is the orbital angular momentum and $\bf{S}$ the spin of the electron. Next, if nucleus of the atom in which this transition is occurring has angular momentum $\bf{I}$, then a new vector, $\bf{F}$, can be defined as 
+where $n_{g,e}$ are principal quantum numbers, and $\bf{J}_{g,e}=\bf{L}_{g,e}+S$ and $\bf{J}_{g,e}^z$ are the angular momentum and projection of the angular momentum on an axis of quantization $z$, respectively. $\bf{L}$ is the orbital angular momentum and $\bf{S}$ the spin of the electron. Next, if nucleus of the atom in which this transition is occurring has angular momentum $\bf{I}$, then a new vector, $\bf{F}$, can be defined as 
 
 \begin{equation}
 \bf{F_{g,e}} = \bf{I} + \bf{J}_{g,e}
@@ -25,27 +25,27 @@ $\bf{F}$ describes the total angular momentum state of the atom, so $\ket{g}$ an
 \end{align}
 For a fixed I, F can range from $(|\mathrm{I-J}|)$ to $(|\mathrm{I+J}|)$.
 \subsection{Peak Energies}
-The energy of the electrons depends on the various electron-nucleus interactions present in the atom. For the purposes of this work, only three interactions aer considered. These are the isotope, magnetic dipole and electric quadrupole shifts, which lead to energy shifts on the order of roughly $10^{-7}-10^{-4}$ eV \cite{ModAN}. There are higher order interactions (magnetic octopole, electric hexadecapole), however their effects are far below the resolution of $\approx 10^{-8}$ eV of the experimental set-up employed at TRIUMF\cite{GA69}.
+The energy of the electrons depends on the various electron-nucleus interactions present in the atom. For the purposes of this work, only three interactions are considered. These are the isotope, magnetic dipole and electric quadrupole shifts, which lead to energy shifts on the order of roughly $10^{-7}-10^{-4}$ eV\cite{ModAN}. There are higher order interactions (magnetic octopole, electric hexadecapole), however their effects are far below the resolution of $\approx 10^{-8}$ eV of the experimental set-up employed at TRIUMF\cite{GA69}.
 
 \subsubsection{Isotope Shift}
 The isotope shift is measured with respect to a reference isotope. As neutrons are added or removed from a nucleus, the charge distribution, as well as the mass, of the nucleus changes. This leads to three different effects on the energies of the electrons. 
 
-The change in the mass of the nucleus leads to what is known as the Mass Shift, $\Delta E_M$. The Mass Shift between two isotopes with mass numbers A and A' is given by \citep{TomT}
+The change in the mass of the nucleus leads to what is known as the Mass Shift, $\Delta E_M$. The Mass Shift between two isotopes with mass numbers A and A' is given by\citep{TomT}
 \begin{equation}
-\Delta E_M = \frac{m_{\mathrm{A}}-m_{\mathrm{A'}}}{2 m_{\mathrm{A}} m_{\mathrm{A'}}} \left(\sum_i\mathrm{\textbf{p}}_i +2 \sum_{i>j}\mathrm{\textbf{p}}_i \cdot \mathrm{\textbf{p}}_j \right)
+\Delta E_M = \frac{m_{\mathrm{A}}-m_{\mathrm{A'}}}{2 m_{\mathrm{A}} m_{\mathrm{A'}}} \left(\sum_i\mathrm{\textbf{p}}_i +2 \sum_{i>j}\mathrm{\textbf{p}}_i \cdot \mathrm{\textbf{p}}_j \right),
 \end{equation}
-where $m_{\mathrm{A}}$ and $m_{\mathrm{A'}}$ are the isotope masses, and $\textbf{p}_i$ is the momentum of the i$^{\mathrm{th}}$ election. The first term is the Bohr reduced mass equation arising from the change in the center of mass of the system.
+where $m_{\mathrm{A}}$ and $m_{\mathrm{A'}}$ are the isotope masses, and $\textbf{p}_i$ is the momentum of the i$^{\mathrm{th}}$ election. The first term is the Bohr reduced mass equation arising from the change in the center of mass of the system, while the second term takes into account the correlations between the momenta of all the electrons. 
 
 The change in the charge distribution of the nucleus produces the Field Shift. While the typical nucleus is far smaller the wavefunction of a typical orbital electron, the effect is still important. The energy of a nucleus in the charge density produced by the electrons at the origin, $E_F$, is given by
 
 \begin{equation}
 E_F = \frac{Ze^2}{6 \epsilon_0}|\psi(0)|^2 \left\langle r_{ch}^2\right\rangle
 \end{equation}
-where $\epsilon_0$ is the permitivity of free space, $Z$ is the proton number, $e$ is the fundamental charge, $\psi(0)$ is the value of the electron wavefunction at the nucleus. $ \left\langle r_{ch}^2\right\rangle$ is the mean-square charge radius of the nucleus, defined as
+where $\epsilon_0$ is the permitivity of free space, $Z$ is the proton number, $e$ is the fundamental charge, $\psi(0)$ is the value of the electron wavefunction at the nucleus. $ \left\langle r_{ch}^2\right\rangle$ is the mean-square charge radius of the nucleus, defined as \cite{LasCool}
 \begin{equation}
- \left\langle r_{ch}^2\right\rangle = \frac{\int_0^{\infty}\rho(\mathbf{r})r^2dV}{\int_0^{\infty}\rho(\mathbf{r})dV}
+ \left\langle r_{ch}^2\right\rangle = \frac{\int_0^{\infty}\rho(\mathbf{r})r^2dV}{\int_0^{\infty}\rho(\mathbf{r})dV}.
 \end{equation}
-\noindent The field shift between two isotopes is then given by
+\noindent The Field Shift between two isotopes is then given by
 \begin{equation}
 \Delta E_F =  \frac{Ze^2}{6 \epsilon_0}\Delta|\psi(0)|^2 \Delta\left\langle r_{ch}^2\right\rangle
 \end{equation}
@@ -62,7 +62,7 @@ A nucleus with a non-zero nuclear spin $\bf{I}$  will have a magnetic dipole mom
 \boldsymbol{\mu}_{\mathrm{\bf{I}}} = g_{\mathrm{I}}\mu_{\mathrm{N}}\mathrm{\bf{I}}
 \end{equation}
 
-\noindent where $g_{\mathrm{I}}$ is the g-factor and $\mu_{\mathrm{N}}$ is the nuclear magneton.\cite{Nut} The interaction of $\mu_{\mathrm{I}}$ with the magnetic field produced by the electrons, $\mathrm{\bf{B_e}}$, creates a shift in the energy of the orbiting electrons. Provided the electrons occupy an angular momentum state $\mathrm{\bf{J}} \neq 0$ (since $\mathrm{\bf{J}} = 0 \rightarrow \mathrm{\bf{B_e}} = 0$), the Hamiltonian for this interaction is given by
+\noindent where $g_{\mathrm{I}}$ is the g-factor and $\mu_{\mathrm{N}}$ is the nuclear magneton\cite{Nut}. The interaction of $\mu_{\mathrm{I}}$ with the magnetic field produced by the electrons, $\mathrm{\bf{B_e}}$, creates a shift in the energy of the orbiting electrons. Provided the electrons occupy an angular momentum state $\mathrm{\bf{J}} \neq 0$ (since $\mathrm{\bf{J}} = 0 \rightarrow \mathrm{\bf{B_e}} = 0$), the Hamiltonian for this interaction is given by \cite{TomT}
 
 \begin{equation}
 \mathcal{H} = -\boldsymbol{\mu}_{\mathrm{\bf{I}}} \cdot \mathrm{\bf{B_e}}
@@ -73,7 +73,6 @@ A nucleus with a non-zero nuclear spin $\bf{I}$  will have a magnetic dipole mom
 \begin{equation}
 \Delta E_{\mu_I} = \frac{AK}{2}
 \end{equation}
-
 where $K = \mathrm{F(F+1) - I(I+1) - J(J+1)}$ and 
 
 \begin{equation}
@@ -86,12 +85,12 @@ The electric quadrupole moment is used to describe the distribution of charge in
 \begin{equation}
 \mathrm{Q} = \sum_i^n (3z_i^2-r_i^2)
 \end{equation}
-where $r_i^2 = x_i^2+y_i^2+z_i^2$ for a chosen $z$-axis. Noting that the deformations described by Q are defined with respect to the $z-$axis, Fig. \ref{Q} shows how different values of Q translate into physical differences in the charge distribution of the nucleus. If Q $ < 0$, then the nucleus is stretched in the $x-y$ plane (oblate). If Q $ > 0$, then the nucleus is stretched along the $z-$axis (prolate). Q $=0$ indicates that the nucleus is spherical. 
+where $r_i^2 = x_i^2+y_i^2+z_i^2$ for a chosen $z$-axis\cite{Nut}. Noting that the deformations described by Q are defined with respect to the $z-$axis, Fig. \ref{Q} shows how different values of Q translate into physical differences in the charge distribution of the nucleus. If Q $ < 0$, then the nucleus is stretched in the $x-y$ plane (oblate). If Q $ > 0$, then the nucleus is stretched along the $z-$axis (prolate). Q $=0$ indicates that the nucleus is spherical. 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{Graphics/Q_pic.png}
-\caption[Oblate vs. Prolate vs. Spherical]{\small Shape of the nucleus for Q $=$ 0 (spherical), Q $<$ 0 (oblate) and Q $>$ 0 (prolate).\cite{wolf}}
+\caption[Oblate vs. Prolate vs. Spherical]{\small Shape of the nucleus for Q $<$ 0 (oblate), Q $>$ 0 (prolate) and Q $=$ 0 (spherical)\cite{wolf}.}
 \label{Q}
 \end{center}
 \end{figure}
@@ -111,15 +110,15 @@ where
 \begin{equation}
 \nabla{E_N} = \frac{\partial^2V}{\partial x_i\partial x_j}, \{x_j,x_k\} \in \{x,y,z\} \otimes \{x,y,z\},
 \end{equation}
-$e$ is the fundamental charge and $V$ is the electric potential. Recalling that the nuclear deformation is symmetric about the axis of quantization, the shift in energy is then given by
+$e$ is the fundamental charge and $V$ is the electric potential\cite{TomT}. Recalling that the nuclear deformation is symmetric about the axis of quantization, the shift in energy is then given by
 
 \begin{equation}
 \Delta E_{\mathrm{Q_s}} = \frac{B}{4}\left[\frac{\frac{3}{2}K(K+1)-2\mathrm{I}(\mathrm{I}+1)\mathrm{J}(\mathrm{J}+1)}{\mathrm{I}(2\mathrm{I}-1)\mathrm{J}(2\mathrm{J}-1)}\right]
 \label{B-eq}
 \end{equation}
-where $B$ is a hyperfine coefficient and is given by
+where $B$ is a hyperfine coefficient and is given by \cite{TomT}
 \begin{equation}
-B = e\mathrm{Q_s}\left\langle\frac{\partial^2V}{\partial z^2} \right\rangle
+B = e\mathrm{Q_s}\left\langle\frac{\partial^2V}{\partial z^2} \right\rangle.
 \end{equation}
 Eq. \ref{B-eq} has singularities at I = $\frac{1}{2}$ and J=$\frac{1}{2}$. This captures the fact that in either case there is no coupling between the nucleus and the electric field gradient produced by the electrons, as an orbital angular momentum state of $\frac{1}{2}$ is isotropically distributed in space .
 
@@ -133,9 +132,9 @@ E_{hfs} = E_{fs} +  \Delta E_{\mathrm{A,A'}}+\Delta E_{\mu_I}\Bigr|_{\mathrm{F_g
 \noindent When a hyperfine spectrum is fitted, the fit parameters which govern the locations of the peaks are the hyperfine parameters $A$ and $B$ for both $\ket{e}$ and $\ket{g}$, as well as what is known as the centroid, $\nu_0$. The centroid combines the fine structure energy and the isotope shift into one quantity. It is important to note that while the values of hyperfine coefficients can be directly linked to the physical properties of the nucleus, only the change in the centroid with respect to a reference isotope can be used to measure the change in the mean-square charge radius.
 
 \subsection{Peak intensities} 
-The other notable characteristic of a hyperfine spectrum, the ratios of the peak intensities can give information as to the spin of the nucleus if the angular momentum states of the electron orbitals are known. The origin of the peak intensities is presented in more detail in the Angular Part of $\S$ \ref{ALI}, however in the interest of the completeness of this section, the result is presented here. The intensity of a transition from $\ket{\mathrm{F_e,J_e,I}}$ to $\ket{\mathrm{F_g,J_g,I}}$, relative to other available transitions, is known as the Racah intensity and is given by
+The other notable characteristic of a hyperfine spectrum, the ratios of the peak intensities can give information as to the spin of the nucleus if the angular momentum states of the electron orbitals are known. The origin of the peak intensities is presented in more detail in the Angular Part of $\S$ \ref{ALI}, however in the interest of the completeness of this section, the result is presented here. The intensity of a transition from $\ket{\mathrm{\bf{F}_e,\bf{J}_e,I}}$ to $\ket{\mathrm{\bf{F}_g,\bf{J}_g,I}}$, relative to other available transitions, is known as the Racah intensity and is given by
 \begin{equation}
-Intensity = (2F_e+1)(2F_g+1)
+Intensity = (2\mathrm{F}_e+1)(2\mathrm{F}_g+1)
 \left\lbrace
 \mathrm{
 \begin{matrix}
@@ -150,8 +149,8 @@ where the quantity in curly brackets is the Wigner 6-j symbol\cite{TomT}. An imp
 \subsection{Peak Widths}
 The lineshape of the peaks is the result of three physical processes, outlined in this section. These three processes are of varying importance, depending on the properties of the atoms being probed, contributing Lorentzian or Gaussian profiles to the peak shape. 
 
-\noindent \subsubsection{Natural Linewidth}
-\noindent The first addition to the linewidth of an atomic transition is the natural linewidth. The energy-time version of the uncertainty principal, $\Delta E \Delta t= \hbar$ leads to 
+\subsubsection{Natural Linewidth}
+The first addition to the linewidth of an atomic transition is the natural linewidth. The energy-time version of the uncertainty principal, $\Delta E \Delta t= \hbar$ leads to 
 \begin{equation}
 \Delta \nu = \frac{\Delta E}{h}=\frac{1}{2 \pi \tau_0}
 \end{equation}
@@ -177,25 +176,25 @@ For a Gaussian lineshape, the HWHM is also give by
 \begin{equation}
 \mathrm{HWHM} = \sqrt{2\log(2)}\sigma_g
 \end{equation}
-where $\sigma_g$ the square root of the variance of the distribution, $\sigma_g^2 = kT/m_a$ in the case of a Gaussian profile. When an observer is moving relative to a source of radiation, the frequency of the radiation measured by the observer obeys the following\cite{landau1975}
+where $\sigma_g$ the square root of the variance of the distribution, $\sigma_g^2 = kT/m_A$ in the case of a Gaussian profile. When an observer is moving relative to a source of radiation, the frequency of the radiation measured by the observer obeys the following \cite{landau1975}
 \begin{equation}
-\nu_o = \nu_s\sqrt{\frac{1+v/c}{1-v/c}}
+f_o = f_s\sqrt{\frac{1+v/c}{1-v/c}}
 \label{dop_shift}
 \end{equation}
-where $\nu_o$ and $\nu_s$ are the observed and source frequencies, respectively, $v$ is the velocity of the observer relative to the source and $c$ is the speed of light in a vacuum. Differentiating the above with respect to $v$, and assuming $v\ll c$ leads to
+where $f_o$ and $f_s$ are the observed and source frequencies, respectively, $v$ is the velocity of the observer relative to the source and $c$ is the speed of light in a vacuum. Differentiating the above with respect to $v$, and assuming $v\ll c$ leads to
 \begin{align*}
-\frac{d\nu_o}{dv} =& 2\frac{\nu_s}{c}\\ \nonumber
-d\nu_o =& \nu_s\left(\frac{8kT\log(2)}{m_Ac^2}\right)^{1/2}
+\frac{df_o}{dv} =& 2\frac{f_s}{c}\\ \nonumber
+df_o =& f_s\left(\frac{8kT\log(2)}{m_Ac^2}\right)^{1/2}
 \end{align*}
 \label{temp_width}
-$d\nu_o$ is the HWHM of the Gaussian lineshape that Doppler broadening contributes to the overall lineshape of the transition\cite{TomT}.
+$df_o$ is the HWHM of the Gaussian lineshape that Doppler broadening contributes to the overall lineshape of the transition\cite{TomT}.
 
 \subsubsection{Voigt Profile}
 As the strengths of the above processes can change depending on the parameters of the experiment, a Voigt profile is used when fitting the hyperfine spectra. The Voigt profile, defined as a convolution of the Lorentzian and Gaussian profiles, has no exact analytic solution. For the purposes of this work, the Pseudo-Voigt profile, given below, is used.
 \begin{equation}
 \mathcal{V}(x) = \frac{1-\epsilon}{\sigma_g\sqrt{2\pi}}\exp\left(\frac{(x-x_0)^2}{2\sigma_g^2}\right)+\frac{\epsilon\sigma}{\pi((x-x_0)^2+\sigma^2)}
 \end{equation}
-This is the weighted sum of a Gaussian and a Lorentzian where $\epsilon$ is a parameter that determines the relative contribution of the each and $x_0$ is the centroid. $\sigma$ is the Voigt linewidth and $\sigma_g = \sigma/\sqrt{2\log{2}}$ is defined such that the full width half maximum of the profile as well as its components is $2\sigma$.\cite{voigt}
+This is the weighted sum of a Gaussian and a Lorentzian where $\epsilon$ is a parameter that determines the relative contribution of the each and $x_0$ is the centroid. $\sigma$ is the Voigt linewidth and $\sigma_g = \sigma/\sqrt{2\log{2}}$ is defined such that the full width half maximum of the profile as well as its components is $2\sigma$\cite{voigt}.
 \section{Spontaneous Emission in \\ Multi-Level Atoms}
 \label{ALI}
 A hyperfine spectrum is constructed through the measurement of the photons emitted as electrons in excited states de-excite to lower energy states. In order to simulate a hyperfine spectrum, then, it is necessary to understand the mechanisms through which electrons transition between energy levels in an atom.
@@ -204,7 +203,7 @@ Consider a two-level atom in an excited state. The wavefunction of the system is
 \begin{equation}
 \ket{\psi} = c_{e,0}e^{-i\omega_et}\ket{e,0} + \sum_Sc_{g,1}e^{-i(\omega_g+\omega)t}\ket{g,1_S}
 \end{equation}
-where $S = (\bm{k},\bm{\varepsilon})$ gives the wavevector $\bm{k}$ and polarization $\bm{\varepsilon}$ of an emitted photon, $\omega = kc$, $\omega_e$ and $\omega_g$ are the angular frequencies corresponding to the energy of the excited and ground states, respectively. \cite{LasCool} The time evolution of the two states is described by
+where $S = (\bm{k},\bm{\varepsilon})$ gives the wavevector $\bm{k}$ and polarization $\bm{\varepsilon}$ of an emitted photon, $\omega = kc$, $\omega_e$ and $\omega_g$ are the angular frequencies corresponding to the energy of the excited and ground states, respectively\cite{LasCool}. The time evolution of the two states is described by
 \begin{align}
 i\frac{\mathrm{d}c_{e,0}(t)}{\mathrm{d}t} =& \sum_Sc_{g,1_S}(t)\Omega_S e^{-i(\omega-\omega_a)t} \label{dc_e} \\
 i\frac{\mathrm{d}c_{g,1_S}(t)}{\mathrm{d}t} =& \ c_{e,0}(t)\Omega_S^*e^{i(\omega-\omega_a)t} \label{dc_g}
@@ -266,26 +265,26 @@ Substitution of Eq. \ref{muref} in to the above yields
 \end{equation}
 where the subscripts on $\mathcal{R}$ and $\mathcal{A}$ have been dropped for convenience. Rearranging gives the following expression for $\mathcal{R}^2$
 \begin{equation}
-\mathcal{R}^2 = \frac{3 \pi \epsilon_0 \hbar c^3 \gamma_f}{e^2} \sum_i \frac{1}{\omega_i^3\mathcal{A}^2_i}
+\mathcal{R}^2 = \frac{3 \pi \epsilon_0 \hbar c^3 \gamma_f}{e^2} \sum_i \frac{1}{\omega_i^3\mathcal{A}^2_i}.
 \label{Remp}
 \end{equation}
 Note that this result allows $\mathcal{R}$ to take both negative and positive values. For the purposes of the calculations present in this work, however, only the square of the radial part is important. As such, the degeneracy in Eq. \ref{Remp} can safely be ignored. 
 \subsubsection*{Angular Part}
-Unlike the radial part of the dipole moment, the angular part changes depending on the F state of the excited and ground states. An outline of the procedure followed to find $\mathcal{A}$ is outlined in this section, a complete treatment of the calculation can be found in \cite{LasCool} 
+Unlike the radial part of the dipole moment, the angular part changes depending on the F state of the excited and ground states. An outline of the procedure followed to find $\mathcal{A}$ is outlined in this section, a complete treatment of the calculation can be found in \cite{LasCool}. 
 
 In the presence of hyperfine structure, the atomic eigenstates can be represented in the following manner
 \begin{equation}
-\ket{n,F,F_z} = \sum_iC_i\ket{n,J,J_z}\ket{I,I_z}
+\ket{n,\mathrm{\bf{F}},\mathrm{\bf{F}}_z} = \sum_iC_i\ket{n,\mathrm{\bf{J}},\mathrm{\bf{J}}_z}\ket{\mathrm{\bf{I}},\mathrm{\bf{I}}_z}
 \label{jstates}
 \end{equation}
 where \textbf{J}  =\textbf{ J} + \textbf{S}, \textbf{S} is the spin of the electron and the $C_i$'s are Clebsch-Gordan coefficients. The \textbf{J} states can further be decomposed into combinations of \textbf{J} and \textbf{S} states
 \begin{equation}
-\ket{n,F,F_z} = \sum_iC_i\ket{I,I_z}\sum_kC_k\ket{n,J,J_z}\ket{S,S_z}
+\ket{n,\mathrm{\bf{F}},\mathrm{\bf{F}}_z} = \sum_iC_i\ket{\mathrm{\bf{I}},\mathrm{\bf{I}}_z}\sum_kC_k\ket{n,\mathrm{\bf{J}},\mathrm{\bf{J}}_z}\ket{\mathrm{\bf{S}},\mathrm{\bf{S}}_z}
 \label{jstates}
 \end{equation}
-This is possible since the optical electric field only couples the orbital angular momentum, \textbf{J}, components of the eigenstates.  The Clebsch-Gordan coefficients can be expressed as
+This is possible since the optical electric field only couples the orbital angular momentum, \textbf{J}, components of the eigenstates. The Clebsch-Gordan coefficients can be expressed as
 \begin{equation}
-C_i = \braket{\mathrm{J,J_z ; S,S_z}|\mathrm{J,J_z}}=(-1)^{\mathrm{-J+S-J_z}}\sqrt{\mathrm{2J+1}}
+C_i = \braket{\mathrm{\bf{J},\bf{J}_z ; \bf{S},\bf{S}_z}|\mathrm{\bf{J},\bf{J}_z}}=(-1)^{\mathrm{-J+S-J_z}}\sqrt{\mathrm{2J+1}}
 \left(
 \begin{matrix}
 \mathrm{J}-\mathrm{S} & \mathrm{S} & \mathrm{J}\\
@@ -293,12 +292,11 @@ C_i = \braket{\mathrm{J,J_z ; S,S_z}|\mathrm{J,J_z}}=(-1)^{\mathrm{-J+S-J_z}}\sq
 \end{matrix}
 \right)
 \end{equation}
-where the quantity in brackets is the Wigner 3-j symbol.
-Substituting Eq. \ref{jstates} into the definition of $\mu$ gives 
+where the quantity in brackets is the Wigner 3-j symbol. Substituting Eq. \ref{jstates} into the definition of $\mu$ gives 
 \begin{equation}
 \begin{split}
 \mu = \sum_{q = -1,0,1} e (-1)^{\mathrm{1+J_e+J_g+I-F_{e,z}}}\mathcal{R}_{n_e J_e, n_g J_g}\\
-\times \sqrt{(2J_g+1)(2J_e+1)(2F_g+1)(2F_e+1)}\\
+\times \sqrt{(2\mathrm{J}_g+1)(2\mathrm{J}_e+1)(2\mathrm{F}_g+1)(2\mathrm{F}_e+1)}\\
 \times \left\lbrace
 \begin{matrix}
 \mathrm{J}_e-\mathrm{S} & \mathrm{J}_e & \mathrm{S}\\
@@ -347,7 +345,7 @@ where the quantity in the curly brackets is not a 3-j symbol but a 6-j symbol, a
 
 
 \subsection{Selection Rules}
-The coupling of the ground state and excited state through the optical electrical field places restrictions on the change in the angular momentum state of the atom. In the case of transitions between orbital angular momentum states present in hyperfine atomic structures, only transitions where $\Delta$\textbf{F}  $=\pm1,0$ are permitted. These selection rules reflect conservation of angular momentum. Photons have angular momentum $\hbar$. The angular momentum of the photon can either be parallel, anti-parallel or perpendicular to the axis of quantization, reflecting $\Delta$\textbf{F}$=\pm1,0$ respectively. Additionally, the transition \textbf{F}' = 0 $\rightarrow$ \textbf{F} = 0 is forbidden. This is because \textbf{F} is a result of the coupling between \textbf{I} and \textbf{J}. \textbf{F}' = 0 implies that \textbf{I} = 0 = \textbf{J}'. The emission of a photon requires a change in angular momentum, which is impossible if \textbf{F} = 0 = \textbf{I} + \textbf{J}.
+The coupling of the ground state and excited state through the optical electrical field places restrictions on the change in the angular momentum state of the atom. In the case of transitions between orbital angular momentum states present in hyperfine atomic structures, only transitions where $\Delta$\textbf{F}  $=\pm1,0$ are permitted. These selection rules reflect conservation of angular momentum. Photons have angular momentum $\hbar$. The angular momentum of the photon can either be parallel, anti-parallel or perpendicular to the axis of quantization, reflecting $\Delta$\textbf{F}$=\pm1,0$ respectively. Additionally, the transition \textbf{F}' = 0 $\rightarrow$ \textbf{F} = 0 is forbidden. This is because \textbf{F} is a result of the coupling between \textbf{I} and \textbf{J}. \textbf{F}' = 0 implies that \textbf{I} = 0 = \textbf{J}' or |\textbf{I}| = |\textbf{J}|. The emission of a photon requires a change in angular momentum, which is impossible in both cases, as \textbf{J} does not change\cite{TomT}.
 
 \section{Photon Scattering Rates}
 The rate at which photons are absorbed by atoms is an important factor in the simulation of hyperfine spectra. For a two level system, where the population of the the excited state $\rho_{e}$ and the ground state $\rho_{g}$ obey the conservation rule $\rho_e +\rho_g = 1$, the total scattering rate from a laser field is given by
